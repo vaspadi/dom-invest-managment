@@ -1,0 +1,34 @@
+export const links = [
+  {
+    title: 'Главная',
+    url: '/'
+  },
+  {
+    title: 'Проекты',
+    url: '/projects'
+  },
+  {
+    title: 'О компании',
+    url: '/about'
+  },
+  {
+    title: 'Наши объекты',
+    url: '/objects'
+  },
+  {
+    title: 'ИЖД',
+    url: '/izd'
+  },
+  {
+    title: 'Новости',
+    url: '/news'
+  },
+  {
+    title: 'Квартиры',
+    url: '/apartments'
+  },
+  {
+    title: 'Контакты',
+    url: '/contacts'
+  }
+]
