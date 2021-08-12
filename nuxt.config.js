@@ -31,8 +31,24 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@aceforth/nuxt-optimized-images'
   ],
+
+  optimizedImages: {
+    optimizeImages: true,
+    responsive: {
+      sizes: [
+        // 576,
+        768,
+        // 992,
+        1200
+        // 1590
+      ],
+      placeholder: true,
+      placeholderSize: 20
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

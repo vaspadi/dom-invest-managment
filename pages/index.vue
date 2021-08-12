@@ -1,14 +1,15 @@
 <template>
   <div>
-    <VideoBlock video-id="MHW2jIW8kVo" />
+    <ResponsibleImage img="become-investor-bg.jpg" />
   </div>
 </template>
 
 <script>
-import VideoBlock from '~/components/global/VideoBlock.vue'
+import ResponsibleImage from '~/components/global/ResponsibleImage.vue'
+
 export default {
   components: {
-    VideoBlock
+    ResponsibleImage
   }
 }
 </script>
