@@ -17,7 +17,7 @@ export const links = [
   },
   {
     title: 'ИЖД',
-    url: '/izd'
+    url: '/houses'
   },
   {
     title: 'Новости',

@@ -1,3 +1,14 @@
+export const headTitles = {
+  home: 'Главная',
+  projects: 'Проекты',
+  about: 'О компании',
+  objects: 'Наши объекты',
+  houses: 'ИЖД',
+  news: 'Новости',
+  apartments: 'Квартиры',
+  contacts: 'Контакты'
+}
+
 export const mainSlider = {
   title: 'Дома малой этажности, эстетичный внешний вид и стильный дизайн',
   images: [

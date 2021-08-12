@@ -7,7 +7,7 @@
 import MainSlider from '~/components/molecules/MainSlider.vue'
 
 export default {
-  name: 'Index',
+  name: 'IndexPage',
 
   components: {
     MainSlider
