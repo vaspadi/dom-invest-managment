@@ -1,7 +1,5 @@
-<template>
-  <div>
-    asdfasdfasfdfsd
-  </div>
+<template lang="pug">
+  div.div asdfasdfasfdfsd
 </template>
 
 <script>
