@@ -1,10 +1,14 @@
 <template>
   <div>
-    <Tutorial />
-    asdfd
+    <VideoBlock video-id="MHW2jIW8kVo" />
   </div>
 </template>
 
 <script>
-export default {}
+import VideoBlock from '~/components/global/VideoBlock.vue'
+export default {
+  components: {
+    VideoBlock
+  }
+}
 </script>
