@@ -1,9 +1,16 @@
 <template lang="pug">
-  div.div asdfasdfasfdfsd
+  div.index-page
+    MainSlider
 </template>
 
 <script>
+import MainSlider from '~/components/molecules/MainSlider.vue'
+
 export default {
-  name: 'Index'
+  name: 'Index',
+
+  components: {
+    MainSlider
+  }
 }
 </script>
