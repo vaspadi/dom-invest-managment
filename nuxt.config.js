@@ -32,7 +32,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@aceforth/nuxt-optimized-images'
+    '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/fontawesome'
   ],
 
   optimizedImages: {
@@ -47,6 +48,14 @@ export default {
       ],
       placeholder: true,
       placeholderSize: 20
+    }
+  },
+
+  fontawesome: {
+    component: 'icon',
+    icons: {
+      solid: true,
+      brands: true
     }
   },
 
