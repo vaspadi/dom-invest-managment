@@ -14,3 +14,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.index-page {
+  padding-bottom: 100vh;
+}
+</style>

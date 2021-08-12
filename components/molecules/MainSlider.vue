@@ -4,9 +4,13 @@
       Slide.main-slider__slide(v-for="(image, index) in mainSlider.images" :key="index")
         ResponsibleImage(:img="image")
       Pagination(slot="hooper-addons")
+
     .main-slider__controls.container
       button.main-slider__control.main-slider__control_prev(@click="slidePrev")
       button.main-slider__control.main-slider__control_next(@click="slideNext")
+
+    .main-slider__content
+      h1.main-slider__title {{ mainSlider.title }}
 </template>
 
 <script>
@@ -56,7 +60,7 @@ export default {
 <style lang="scss">
 .main-slider {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   min-height: 400px;
 
   &__slider {
@@ -84,7 +88,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
 
   &__control {
@@ -110,6 +114,21 @@ export default {
     &_next {
       transform: rotate(45deg);
     }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  &__title {
+    max-width: 800px;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
   }
 }
 </style>
