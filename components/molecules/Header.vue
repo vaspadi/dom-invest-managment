@@ -1,12 +1,12 @@
 <template lang="pug">
-  header.header(:class="{'header_active': active}")
+  header.header(:style="{ background: `rgba(0,0,0,${opacity})` }")
     .container.header__content
-      Logo(:light="!active")
+      Logo.header__logo(light)
 
-      nav
+      nav.header__nav
         ul.header__list
           li.header__item(v-for="(link, index) in links" :key="index")
-            NuxtLink.header__link(:to="link.url") {{ link.title }}
+            NuxtLink.header__link(exact-active-class="header__link_active" :to="link.url") {{ link.title }}
 </template>
 
 <script>
@@ -23,7 +23,9 @@ export default {
   data () {
     return {
       links,
-      active: false
+      eventHeight: 300,
+      minOpacity: 0.2,
+      opacity: this.minOpacity
     }
   },
 
@@ -42,7 +44,7 @@ export default {
 
   methods: {
     onScroll () {
-      window.scrollY >= 40 && process.browser ? this.active = true : this.active = false
+      this.opacity = this.minOpacity + window.scrollY / this.eventHeight
     }
   }
 }
@@ -50,30 +52,43 @@ export default {
 
 <style lang="scss">
 .header {
-  position: absolute;
-  top: 40px;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
   z-index: 10;
-
-  &_active {
-    position: fixed;
-    top: 0;
-    background-color: #fff;
-    transition: background-color 0.3s;
-
-    .header__link {
-      color: #000;
-    }
-  }
 
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
-    padding: 0 40px;
+    min-height: inherit;
+    padding: 5px 20px;
+
+    @media screen and (max-width: 960px) {
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 720px) {
+      background-color: #000;
+    }
+  }
+
+  &__logo {
+    margin-right: 50px;
+
+    @media screen and (max-width: 960px) {
+      display: none !important;
+    }
+  }
+
+  &__nav {
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__list {
@@ -81,14 +96,26 @@ export default {
   }
 
   &__link {
+    display: inline-block;
     font-size: 20px;
     color: #fff;
     text-decoration: none;
-    padding: 10px;
+    padding: 15px 10px;
+    white-space: nowrap;
 
+    @media screen and (max-width: 1140px) {
+      font-size: 18px;
+      padding: 10px 5px;
+    }
+
+    @media screen and (max-width: 720px) {
+      font-size: 16px;
+      padding: 5px;
+    }
+
+    &_active,
     &:hover,
     &:focus {
-      color: #3f77cc;
       text-decoration: underline;
     }
   }

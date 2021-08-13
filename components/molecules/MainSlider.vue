@@ -63,6 +63,10 @@ export default {
   height: 100vh;
   min-height: 400px;
 
+  @media screen and (max-width: 720px) {
+    height: 90vh;
+  }
+
   &__slider {
     height: 100%;
 
@@ -102,6 +106,14 @@ export default {
     cursor: pointer;
     opacity: 0.5;
 
+    @media screen and (max-width: 960px) {
+      font-size: 15px;
+    }
+
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
+
     &:hover,
     &:focus {
       opacity: 1;
@@ -125,10 +137,20 @@ export default {
   }
 
   &__title {
-    max-width: 800px;
+    max-width: 20em;
+    width: 100vw;
     font-size: 40px;
     color: #fff;
     text-transform: uppercase;
+
+    @media screen and (max-width: 960px) {
+      font-size: 30px;
+    }
+
+    @media screen and (max-width:720px) {
+      font-size: 25px;
+      padding: 0 20px;
+    }
   }
 }
 </style>
