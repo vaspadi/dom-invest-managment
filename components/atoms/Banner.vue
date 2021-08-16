@@ -2,7 +2,7 @@
 section.banner
   ResponsibleImage.banner__image(:img="img")
   .container.banner__content
-    h1.banner__title {{ title }}
+    h1.banner__title.title {{ title }}
 </template>
 
 <script>
@@ -62,20 +62,6 @@ export default {
       justify-content: center;
       align-items: center;
       padding-bottom: 0;
-    }
-  }
-
-  &__title {
-    max-width: 800px;
-    font-size: 50px;
-    text-transform: uppercase;
-
-    @media screen and (max-width: 960px) {
-      font-size: 40px;
-    }
-
-    @media screen and (max-width: 720px) {
-      font-size: 25px;
     }
   }
 }

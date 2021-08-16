@@ -10,7 +10,7 @@
       button.main-slider__control.main-slider__control_next(@click="slideNext")
 
     .main-slider__content
-      h1.main-slider__title {{ mainSlider.title }}
+      h1.main-slider__title.title {{ mainSlider.title }}
 </template>
 
 <script>
@@ -137,18 +137,10 @@ export default {
   }
 
   &__title {
-    max-width: 20em;
+    max-width: 14em;
     width: 100vw;
-    font-size: 40px;
-    color: #fff;
-    text-transform: uppercase;
-
-    @media screen and (max-width: 960px) {
-      font-size: 30px;
-    }
 
     @media screen and (max-width:720px) {
-      font-size: 25px;
       padding: 0 20px;
     }
   }

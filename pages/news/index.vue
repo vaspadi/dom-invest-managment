@@ -1,12 +1,15 @@
 <template lang="pug">
   div.news-page
     Banner(title="Новости")
-    CardsSection(:data="news")
+
+    section.section
+      .container
+        NewsList(:data="news")
 </template>
 
 <script>
 import Banner from '~/components/atoms/Banner'
-import CardsSection from '~/components/molecules/CardsSection'
+import NewsList from '~/components/molecules/NewsList'
 import { headTitles } from '~/content/data'
 
 export default {
@@ -14,7 +17,7 @@ export default {
 
   components: {
     Banner,
-    CardsSection
+    NewsList
   },
 
   data () {

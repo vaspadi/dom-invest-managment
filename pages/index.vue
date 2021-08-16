@@ -1,19 +1,19 @@
 <template lang="pug">
   div.index-page
     MainSlider
-    CardsSection
+    NewsSection
 </template>
 
 <script>
 import MainSlider from '~/components/molecules/MainSlider.vue'
-import CardsSection from '~/components/molecules/CardsSection.vue'
+import NewsSection from '~/components/molecules/NewsSection.vue'
 
 export default {
   name: 'IndexPage',
 
   components: {
     MainSlider,
-    CardsSection
+    NewsSection
   }
 }
 </script>

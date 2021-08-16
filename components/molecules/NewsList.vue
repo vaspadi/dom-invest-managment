@@ -1,9 +1,7 @@
 <template lang="pug">
-  section.cards-section.section
-    .container
-      ul.cards-section__list
-        li.cards-section__item(v-for="(item, index) in data" :key="index")
-          Card(:data="item")
+  ul.cards-section__list
+    li.cards-section__item(v-for="(item, index) in data" :key="index")
+      Card(:data="item")
 </template>
 
 <script>
