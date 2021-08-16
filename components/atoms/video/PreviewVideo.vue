@@ -6,7 +6,7 @@
     <img class="preview-video__img" :src="`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`" :alt="title">
 
     <button class="preview-video__button">
-      play
+      <icon class="preview-video__icon" :icon="['fab', 'youtube']" />
     </button>
   </div>
 </template>

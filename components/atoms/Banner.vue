@@ -32,9 +32,8 @@ export default {
 <style lang="scss">
 .banner {
   position: relative;
-  height: 70vh;
+  height: 50vh;
   min-height: 400px;
-  margin-bottom: 100vh;
 
   @media screen and (max-width: 720px) {
     height: 50vh;
@@ -56,7 +55,7 @@ export default {
     align-items: flex-end;
     height: 100%;
     color: #fff;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
     z-index: 1;
 
     @media screen and (max-width: 720px) {

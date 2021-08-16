@@ -34,6 +34,7 @@ export default {
     height: 100%;
     min-height: inherit;
     object-fit: cover;
+    border-radius: inherit;
   }
 }
 </style>
