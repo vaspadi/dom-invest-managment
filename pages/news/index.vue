@@ -4,12 +4,12 @@
 
     section.section
       .container
-        NewsList(:data="news")
+        CardList(:data="news")
 </template>
 
 <script>
 import Banner from '~/components/atoms/Banner'
-import NewsList from '~/components/molecules/NewsList'
+import CardList from '~/components/molecules/CardList'
 import { headTitles } from '~/content/data'
 
 export default {
@@ -17,7 +17,7 @@ export default {
 
   components: {
     Banner,
-    NewsList
+    CardList
   },
 
   data () {

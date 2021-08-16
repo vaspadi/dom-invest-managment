@@ -1,7 +1,7 @@
 <template lang="pug">
   section.news-section.section
     .container
-      NewsList(:data="news")
+      CardList(:data="news")
 
       .news-section__content
         .news-section__left
@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import NewsList from '~/components/molecules/NewsList'
+import CardList from '~/components/molecules/CardList'
 
 export default {
   name: 'NewsSection',
 
   components: {
-    NewsList
+    CardList
   },
 
   data () {
