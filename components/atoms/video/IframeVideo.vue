@@ -27,8 +27,9 @@ export default {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 56.25%;
   background-color: #000;
+  padding-bottom: 56.25%;
+  border-radius: inherit;
 
   &_square {
     padding-bottom: 100%;
@@ -44,6 +45,7 @@ export default {
     left: 0;
     height: 100%;
     width: 100%;
+    border-radius: inherit;
   }
 }
 </style>

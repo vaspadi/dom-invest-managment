@@ -4,13 +4,24 @@
   text-decoration: none;
   text-transform: lowercase;
   white-space: nowrap;
-  color: #fff;
+  color: #000;
   padding: 10px 40px;
-  border: 1px solid #fff;
+  border: 2px solid #000;
   transition: border 0.2s;
+  cursor: pointer;
 
   &:hover,
   &:focus {
-    border-color: rgba(255,255,255,0.4);
+    border-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &_light {
+    color: #fff;
+    border-color: #fff;
+
+    &:hover,
+    &:focus {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
   }
 }

@@ -46,46 +46,19 @@ export default {
   padding: 0 40px;
 
   &__link {
-    //position: relative;
+    font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-
     color: #000;
-    font-weight: 700;
 
     &:hover,
     &:focus {
       text-decoration: underline;
     }
-
-    //&_left {
-    //  &:hover,
-    //  &:focus {
-    //    left: -10px;
-    //    //color: $--active;
-    //
-    //    //&::selection {
-    //      //background-color: $--dark;
-    //    //}
-    //  }
-    //}
-    //
-    //&_right {
-    //  &:hover,
-    //  &:focus {
-    //    right: -10px;
-    //    //color: $--active;
-    //  }
-    //}
   }
 
   &__text {
     margin: 0 5px;
-
-    //&::selection {
-      //color: $--light;
-    //}
   }
-
 }
 </style>

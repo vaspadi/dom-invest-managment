@@ -1,23 +1,40 @@
 <template lang="pug">
   ul.cards-section__list
     li.cards-section__item(v-for="(item, index) in data" :key="index")
-      Card(:data="item")
+      compoent(:is="component" :data="item")
 </template>
 
 <script>
 import Card from '~/components/molecules/Card'
+import SmallCard from '~/components/molecules/SmallCard'
 
 export default {
   name: 'CardsSection',
 
   components: {
-    Card
+    Card,
+    SmallCard
   },
 
   props: {
     data: {
       type: Array,
       required: true
+    },
+
+    small: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  computed: {
+    component () {
+      if (this.small) {
+        return SmallCard
+      } else {
+        return Card
+      }
     }
   }
 }

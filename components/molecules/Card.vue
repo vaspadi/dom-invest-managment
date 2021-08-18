@@ -32,8 +32,10 @@ export default {
 </script>
 
 <style lang="scss">
+@import "assets/scss/base/variables";
+
 .card {
-  border-radius: 10px;
+  border-radius: $--bd-radius;
   box-shadow: 0 0 10px rgb(0 0 0 / 9%);
   overflow: hidden;
   background-color: #fff;
@@ -56,7 +58,7 @@ export default {
   &__preview {
     flex-shrink: 0;
     height: 250px;
-    border-radius: 10px 10px 0 0;
+    border-radius: $--bd-radius $--bd-radius 0 0;
     overflow: hidden;
   }
 

@@ -3,27 +3,32 @@
     .container
       CardList(:data="news")
 
-      .news-section__content
-        .news-section__left
-          h2.news-section__title.title Последние 3 новости
-          p.news-section__description Больше новостей можно увидеть по ссылке справа
-
-        .news-section__right
-          NuxtLink.news-section__link.button(to="news") Посмотреть новости
+      //.news-section__content
+      //  .news-section__left
+      //    h2.news-section__title.title Последние 3 новости
+      //    p.news-section__description Больше новостей можно увидеть по ссылке справа
+      //
+      //  .news-section__right
+      //    NuxtLink.news-section__link.button(to="news") Посмотреть новости
+      SectionHeader(:data="newsSection" light)
 </template>
 
 <script>
 import CardList from '~/components/molecules/CardList'
+import SectionHeader from '~/components/atoms/SectionHeader'
+import { newsSection } from '~/content/data'
 
 export default {
   name: 'NewsSection',
 
   components: {
-    CardList
+    CardList,
+    SectionHeader
   },
 
   data () {
     return {
+      newsSection,
       news: []
     }
   },

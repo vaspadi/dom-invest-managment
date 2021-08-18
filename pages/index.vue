@@ -1,19 +1,34 @@
 <template lang="pug">
   div.index-page
     MainSlider
+    ObjectsSection
     NewsSection
+    section.section
+      .container
+        SliderBlock(:data="videoSlider")
 </template>
 
 <script>
 import MainSlider from '~/components/molecules/MainSlider.vue'
 import NewsSection from '~/components/molecules/NewsSection.vue'
+import ObjectsSection from '~/components/molecules/ObjectsSection'
+import SliderBlock from '~/components/molecules/SliderBlock'
+import { videoSlider } from '~/content/data'
 
 export default {
   name: 'IndexPage',
 
   components: {
     MainSlider,
-    NewsSection
+    NewsSection,
+    ObjectsSection,
+    SliderBlock
+  },
+
+  data () {
+    return {
+      videoSlider
+    }
   }
 }
 </script>

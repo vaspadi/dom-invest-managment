@@ -41,6 +41,7 @@ export default {
   display: flex;
   align-items: center;
   height: 100%;
+  border-radius: inherit;
   cursor: pointer;
   overflow: hidden;
 
@@ -66,7 +67,7 @@ export default {
     top: 20px;
     left: 20px;
     width: 88%;
-    font-size: 20px;
+    font-size: 30px;
     color: #fff;
     white-space: nowrap;
     overflow: hidden;

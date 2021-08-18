@@ -5,9 +5,7 @@
         ResponsibleImage(:img="image")
       Pagination(slot="hooper-addons")
 
-    .main-slider__controls.container
-      button.main-slider__control.main-slider__control_prev(@click="slidePrev")
-      button.main-slider__control.main-slider__control_next(@click="slideNext")
+    SliderControls.container(@prev="slidePrev" @next="slideNext")
 
     .main-slider__content
       h1.main-slider__title.title {{ mainSlider.title }}
@@ -16,6 +14,7 @@
 <script>
 import { Hooper, Slide, Pagination } from 'hooper'
 import ResponsibleImage from '../global/ResponsibleImage.vue'
+import SliderControls from '~/components/atoms/controls/SliderControls'
 import { mainSlider } from '~/content/data'
 
 export default {
@@ -24,8 +23,9 @@ export default {
   components: {
     Hooper,
     Slide,
+    Pagination,
     ResponsibleImage,
-    Pagination
+    SliderControls
   },
 
   data () {
@@ -84,55 +84,12 @@ export default {
     }
   }
 
-  &__controls {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    transform: translate(-50%, -50%);
-  }
-
-  &__control {
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
-    width: 2em;
-    height: 2em;
-    border-top: 0.25em solid #fff;
-    border-right: 0.25em solid #fff;
-    cursor: pointer;
-    opacity: 0.5;
-
-    @media screen and (max-width: 960px) {
-      font-size: 15px;
-    }
-
-    @media screen and (max-width: 720px) {
-      display: none;
-    }
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
-
-    &_prev {
-      transform: rotate(-135deg);
-    }
-
-    &_next {
-      transform: rotate(45deg);
-    }
-  }
-
   &__content {
     position: absolute;
     top: 50%;
     left: 50%;
     text-align: center;
+    color: #fff;
     transform: translate(-50%, -50%);
   }
 
