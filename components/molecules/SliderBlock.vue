@@ -46,7 +46,6 @@ export default {
         mouseDrag: false,
         touchDrag: false,
         shortDrag: false,
-        autoPlay: true,
         playSpeed: 10000,
         transition: 2000
       }

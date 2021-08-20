@@ -1,6 +1,7 @@
 <template lang="pug">
   div.index-page
     MainSlider
+    PerformanceSection
     ObjectsSection
     NewsSection
     section.section
@@ -10,6 +11,7 @@
 
 <script>
 import MainSlider from '~/components/molecules/MainSlider.vue'
+import PerformanceSection from '~/components/molecules/PerformanceSection'
 import NewsSection from '~/components/molecules/NewsSection.vue'
 import ObjectsSection from '~/components/molecules/ObjectsSection'
 import SliderBlock from '~/components/molecules/SliderBlock'
@@ -20,6 +22,7 @@ export default {
 
   components: {
     MainSlider,
+    PerformanceSection,
     NewsSection,
     ObjectsSection,
     SliderBlock

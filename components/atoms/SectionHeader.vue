@@ -37,7 +37,7 @@ export default {
   }
 
   &__link {
-    margin: 0 60px 0 30px;
+    margin: 0 60px;
   }
 }
 </style>
