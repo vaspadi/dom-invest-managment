@@ -1,7 +1,7 @@
 <template lang="pug">
   section.objects-section.section
     .container
-      CardList(:data="objects" small)
+      CardList.objects-section__list(:data="objects" small)
       SectionHeader(:data="objectsSection")
 </template>
 
@@ -17,7 +17,6 @@ export default {
     CardList,
     SectionHeader
   },
-
   data () {
     return {
       objects: [],
@@ -31,6 +30,14 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+.objects-section {
+  &__list {
+    @media screen and (max-width: 720px) {
+      .cards-section__item:nth-child(n + 4) {
+        display: none;
+      }
+    }
+  }
+}
 </style>
