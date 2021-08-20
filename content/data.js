@@ -89,3 +89,9 @@ export const mortgageSection = {
     }
   }
 }
+
+export const contacts = [
+  { title: 'Телефон', description: '+74012920883', icon: 'phone' },
+  { title: 'Почта', description: 'taxi.39@ya.ru', icon: 'envelope' },
+  { title: 'Адресс', description: 'Мусоргского, 10 к2 Калининград, Центральный район, Офис 2', icon: 'map-marker-alt' }
+]
