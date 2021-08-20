@@ -53,13 +53,34 @@ export default {
     width: 32%;
     margin-bottom: 60px;
 
-    &:nth-child(3n+1) {
-      margin-right: 2%;
+    @media screen and (min-width: 1141px) {
+      &:nth-child(3n+1) {
+        margin-right: 2%;
+      }
+
+      &:nth-child(3n+3) {
+        margin-left: 2%;
+      }
     }
 
-    &:nth-child(3n+3) {
-      margin-left: 2%;
+    @media screen and (max-width: 1140px) {
+      width: 48%;
+
+      &:nth-child(1n) {
+        margin-right: 1%;
+      }
+
+      &:nth-child(2n) {
+        margin-left: 1%;
+      }
     }
+
+    @media screen and (max-width: 720px) {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+
   }
 }
 </style>

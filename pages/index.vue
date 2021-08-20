@@ -3,7 +3,7 @@
     MainSlider
     InformationSection(:data="performanceSection")
     ObjectsSection
-    NewsSection
+    NewsSection.index-page__news
     section.section
       .container
         SliderBlock(:data="videoSlider")
@@ -41,6 +41,14 @@ export default {
 
 <style lang="scss">
 .index-page {
-  padding-bottom: 100vh;
+  &__news {
+    @media screen and (max-width: 1140px) {
+      .cards-section__item {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
 }
 </style>
