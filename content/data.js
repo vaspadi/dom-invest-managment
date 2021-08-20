@@ -22,7 +22,7 @@ export const mainSlider = {
   ]
 }
 
-export const perfomanceSection = {
+export const performanceSection = {
   list: [
     'торговые центры',
     'сетевые супермаркеты, продуктовые и хозяйственные магазины',
@@ -67,3 +67,25 @@ export const videoSlider = [
   { id: 'r0sQ-U3zzJQ', title: 'LR - Queen (2021)' },
   { id: 'wODgsoEM3CE', title: 'Emre Kabak - Race With Me (Bass Boosted)' }
 ]
+
+export const mortgageSection = {
+  list: [
+    'торговые центры',
+    'сетевые супермаркеты, продуктовые и хозяйственные магазины',
+    'детские сады, новая школа г. Гурьевск (от поселка ходит школьный автобус)',
+    'медицинские учреждения',
+    'детские сады, новая школа г. Гурьевск (от поселка ходит школьный автобус)',
+    'медицинские учреждения'
+  ],
+
+  img: 'main-slider/img6.jpg',
+
+  header: {
+    title: 'Ипотека специально для вас',
+    description: 'У нас вы сможете подобрать доступное жилье комфорт-класса',
+    button: {
+      url: '/mortgage',
+      text: 'Расчитать ипотеку'
+    }
+  }
+}

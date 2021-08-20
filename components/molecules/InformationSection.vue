@@ -1,11 +1,11 @@
 <template lang="pug">
-  section.performance-section.section
+  section.information-section.section(:class="{ 'information-section_reverse': reverse }")
     .container
-      .performance-section__content
-        TextBlock.performance-section__text-block(:data="data.list" dark)
+      .information-section__content
+        TextBlock.information-section__text-block(:data="data.list" dark)
 
-        .performance-section__image-wrap
-          ResponsibleImage.performance-section__image(:img="data.img")
+        .information-section__image.image-block
+          ResponsibleImage.image-block__image(:img="data.img")
 
       SectionHeader(:data="data.header" light)
 </template>
@@ -14,10 +14,9 @@
 import TextBlock from '~/components/atoms/TextBlock'
 import ResponsibleImage from '~/components/global/ResponsibleImage'
 import SectionHeader from '~/components/atoms/SectionHeader'
-import { perfomanceSection } from '~/content/data'
 
 export default {
-  name: 'PerformanceSection',
+  name: 'InformationSection',
 
   components: {
     TextBlock,
@@ -25,9 +24,15 @@ export default {
     SectionHeader
   },
 
-  data () {
-    return {
-      data: perfomanceSection
+  props: {
+    data: {
+      type: Object,
+      required: true
+    },
+
+    reverse: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -36,9 +41,21 @@ export default {
 <style lang="scss">
 @import "assets/scss/base/variables";
 
-.performance-section {
+.information-section {
   background-color: $--dark-bg;
   color: #fff;
+
+  &_reverse {
+    .information-section__text-block {
+      margin-left: 20px;
+      order: 2
+    }
+
+    .information-section__image {
+      margin-right: 20px;
+      order: 1;
+    }
+  }
 
   &__content {
     display: flex;
@@ -51,20 +68,9 @@ export default {
     margin-right: 20px;
   }
 
-  &__image-wrap {
-    width: 50%;
-    position: relative;
-    min-height: 100%;
-    margin-left: 20px;
-  }
-
   &__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: $--bd-radius;
+    width: 50%;
+    margin-left: 20px;
   }
 }
 </style>

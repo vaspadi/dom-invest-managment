@@ -1,28 +1,29 @@
 <template lang="pug">
   div.index-page
     MainSlider
-    PerformanceSection
+    InformationSection(:data="performanceSection")
     ObjectsSection
     NewsSection
     section.section
       .container
         SliderBlock(:data="videoSlider")
+    InformationSection(:data="mortgageSection" reverse)
 </template>
 
 <script>
 import MainSlider from '~/components/molecules/MainSlider.vue'
-import PerformanceSection from '~/components/molecules/PerformanceSection'
+import InformationSection from '~/components/molecules/InformationSection'
 import NewsSection from '~/components/molecules/NewsSection.vue'
 import ObjectsSection from '~/components/molecules/ObjectsSection'
 import SliderBlock from '~/components/molecules/SliderBlock'
-import { videoSlider } from '~/content/data'
+import { videoSlider, performanceSection, mortgageSection } from '~/content/data'
 
 export default {
   name: 'IndexPage',
 
   components: {
     MainSlider,
-    PerformanceSection,
+    InformationSection,
     NewsSection,
     ObjectsSection,
     SliderBlock
@@ -30,7 +31,9 @@ export default {
 
   data () {
     return {
-      videoSlider
+      videoSlider,
+      performanceSection,
+      mortgageSection
     }
   }
 }
