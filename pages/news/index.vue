@@ -3,8 +3,9 @@
     Banner(title="Новости")
 
     section.section
-      .container
+      .container.news-page__content
         CardList(:data="news")
+        button.button(v-if="showButton" @click="showMoreNews") Больше новостей
 </template>
 
 <script>
@@ -22,6 +23,7 @@ export default {
 
   data () {
     return {
+      showButton: true,
       headTitles,
       news: []
     }
@@ -37,6 +39,26 @@ export default {
 
   head: () => ({
     title: headTitles.news
-  })
+  }),
+
+  methods: {
+    async showMoreNews () {
+      this.showButton = false
+      this.news = await this.$content('news', { deep: true })
+        .sortBy('createdAt', 'asc')
+        .without(['body'])
+        .fetch()
+    }
+  }
 }
 </script>
+
+<style lang="scss">
+.news-page {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
