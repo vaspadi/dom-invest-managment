@@ -32,12 +32,38 @@ export default {
   justify-content: space-between;
   align-items: center;
 
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   &__description {
     font-size: 25px;
+
+    @media screen and (max-width: 720px) {
+      font-size: 20px;
+    }
+  }
+
+  &__right {
+    @media screen and (max-width: 960px) {
+      align-self: center;
+    }
   }
 
   &__link {
+    display: inline-block;
     margin: 0 60px;
+
+    @media screen and (max-width: 1140px) {
+      font-size: 20px;
+      margin: 0 30px;
+    }
+
+    @media screen and (max-width: 960px) {
+      //font-size: 25px;
+      margin: 30px 0 0;
+    }
   }
 }
 </style>

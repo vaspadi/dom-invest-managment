@@ -72,6 +72,11 @@ export default {
     height: 100%;
     line-height: 1.1;
     padding: 20px 40px 5px;
+
+    @media screen and (max-width: 720px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
   }
 
   &__title {
@@ -79,12 +84,20 @@ export default {
     font-weight: bold;
     margin-bottom: 15px;
     text-transform: lowercase;
+
+    @media screen and (max-width: 540px) {
+      font-size: 25px;
+    }
   }
 
   &__description {
     font-size: 20px;
     color: #000;
     margin-bottom: 15px;
+
+    @media screen and (max-width: 540px) {
+      font-size: 18px;
+    }
   }
 
   &__list {

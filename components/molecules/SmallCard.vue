@@ -74,6 +74,10 @@ export default {
     text-transform: lowercase;
     z-index: 2;
     padding: 20px;
+
+    @media screen and (max-width: 540px) {
+      font-size: 30px;
+    }
   }
 }
 </style>

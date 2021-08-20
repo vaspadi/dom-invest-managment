@@ -67,6 +67,10 @@ export default {
     @media screen and (max-width: 960px) {
       flex-wrap: wrap;
     }
+
+    @media screen and (max-width: 720px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__text-block {

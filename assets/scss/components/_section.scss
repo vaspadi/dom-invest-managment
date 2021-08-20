@@ -2,6 +2,11 @@
   padding-top: 120px;
   padding-bottom: 120px;
 
+  @media screen and (max-width: 720px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
   &_small {
     padding-bottom: 0;
   }

@@ -62,6 +62,7 @@ export default {
   position: relative;
   height: 100vh;
   min-height: 400px;
+  overflow: hidden;
 
   @media screen and (max-width: 720px) {
     height: 90vh;

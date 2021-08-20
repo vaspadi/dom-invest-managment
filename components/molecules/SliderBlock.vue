@@ -40,14 +40,24 @@ export default {
   data () {
     return {
       settings: {
-        itemsToShow: 2,
-        itemsToSlide: 2,
-        wheelControl: false,
-        mouseDrag: false,
-        touchDrag: false,
-        shortDrag: false,
+        itemsToShow: 1,
+        itemsToSlide: 1,
         playSpeed: 10000,
-        transition: 2000
+        transition: 2000,
+        autoPlay: false,
+        breakpoints: {
+          720: {
+            wheelControl: false,
+            mouseDrag: false,
+            touchDrag: false,
+            shortDrag: false
+          },
+
+          1140: {
+            itemsToShow: 2,
+            itemsToSlide: 2
+          }
+        }
       }
     }
   },
@@ -71,6 +81,10 @@ export default {
   position: relative;
   padding: 0 50px;
 
+  @media screen and (max-width: 720px) {
+    padding: 0;
+  }
+
   &__slider {
     height: auto;
     z-index: 2;
@@ -84,6 +98,10 @@ export default {
   &__slide {
     height: auto;
     padding: 0 20px 10px;
+
+    @media screen and (max-width: 720px) {
+      padding: 0 0 10px;
+    }
   }
 
   &__video {
