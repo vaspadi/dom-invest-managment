@@ -46,31 +46,48 @@ export default {
   color: #fff;
 
   &_reverse {
-    .information-section__text-block {
-      margin-left: 20px;
-      order: 2
-    }
+    @media screen and (min-width: 961px) {
+      .information-section__text-block {
+        margin-left: 20px;
+        order: 2
+      }
 
-    .information-section__image {
-      margin-right: 20px;
-      order: 1;
+      .information-section__image {
+        margin-right: 20px;
+        order: 1;
+      }
     }
   }
 
   &__content {
     display: flex;
     min-height: 250px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 960px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__text-block {
-    width: 50%;
     margin-right: 20px;
+
   }
 
   &__image {
-    width: 50%;
     margin-left: 20px;
+  }
+
+  &__text-block,
+  &__image {
+    width: 50%;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 960px) {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 }
 </style>
