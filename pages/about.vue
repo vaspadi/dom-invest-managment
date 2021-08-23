@@ -44,6 +44,10 @@ export default {
   &__section {
     &_margin {
       margin-top: 80px;
+
+      @media screen and (max-width: 720px) {
+        margin-top: 50px;
+      }
     }
   }
 }
