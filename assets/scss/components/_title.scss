@@ -12,4 +12,9 @@
   @media screen and (max-width: 720px) {
     font-size: 40px;
   }
+
+  span {
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
 }

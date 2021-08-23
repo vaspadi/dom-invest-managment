@@ -3,6 +3,7 @@ section.banner
   ResponsibleImage.banner__image(:img="img")
   .container.banner__content
     h1.banner__title.title {{ title }}
+      slot
 </template>
 
 <script>
@@ -62,6 +63,12 @@ export default {
       justify-content: center;
       align-items: center;
       padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    @media screen and (max-width: 720px) {
+      text-align: center;
     }
   }
 }

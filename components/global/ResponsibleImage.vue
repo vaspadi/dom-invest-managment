@@ -29,6 +29,12 @@ export default {
   height: 100%;
   min-height: inherit;
 
+  &_contain {
+    .responsible-image__image {
+      object-fit: contain;
+    }
+  }
+
   &__image {
     width: 100%;
     height: 100%;

@@ -1,16 +1,35 @@
 <template lang="pug">
-  div.about-page about
+  div.about-page
+    Banner история компании <span>«Дом Инвест»</span>
+    section.section.section_dark
+      .container
+        ArticleSection(:data="aboutCompany.chooseUs")
+        ArticleSection.about-page__section_margin(:data="aboutCompany.history")
+    section.section.container
+      ArticleSection(:data="aboutCompany.confidence")
+      PartnersSection.about-page__section_margin(:list="partners")
 </template>
 
 <script>
-import { headTitles } from '~/content/data'
+import Banner from '~/components/atoms/Banner'
+import ArticleSection from '~/components/atoms/ArticleSection'
+import PartnersSection from '~/components/atoms/PartnersSection'
+import { headTitles, aboutCompany, partners } from '~/content/data'
 
 export default {
   name: 'AboutPage',
 
+  components: {
+    Banner,
+    ArticleSection,
+    PartnersSection
+  },
+
   data () {
     return {
-      headTitles
+      headTitles,
+      aboutCompany,
+      partners
     }
   },
 
@@ -19,3 +38,13 @@ export default {
   })
 }
 </script>
+
+<style lang="scss">
+.about-page {
+  &__section {
+    &_margin {
+      margin-top: 80px;
+    }
+  }
+}
+</style>
