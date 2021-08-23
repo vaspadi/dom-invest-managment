@@ -1,7 +1,8 @@
 <template lang="pug">
   .text-block(:class="{ 'text-block_dark': dark }")
+    h3.text-block__title(v-if="data.title") {{ data.title }}
     ul.text-block__list.list(:class="{ 'list_light': dark }")
-      li.text-block__item.list__item(v-for="(item, index) in data" :key="index") {{ item }}
+      li.text-block__item.list__item(v-for="(item, index) in data.list" :key="index") {{ item }}
 </template>
 
 <script>
@@ -15,7 +16,7 @@ export default {
     },
 
     data: {
-      type: Array,
+      type: Object,
       required: true
     }
   }
@@ -33,6 +34,16 @@ export default {
 
   &_dark {
     background-color: $--dark-block-bg;
+  }
+
+  &__title {
+    font-size: 40px;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    text-transform: lowercase;
   }
 }
 </style>

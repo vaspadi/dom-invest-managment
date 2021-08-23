@@ -2,12 +2,12 @@
   section.information-section.section(:class="{ 'information-section_reverse': reverse }")
     .container
       .information-section__content
-        TextBlock.information-section__text-block(:data="data.list" dark)
+        TextBlock.information-section__text-block(:data="data.text" dark)
 
         .information-section__image.image-block
           ResponsibleImage.image-block__image(:img="data.img")
 
-      SectionHeader(:data="data.header" light)
+      SectionHeader(v-if="data.header" :data="data.header" light)
 </template>
 
 <script>
