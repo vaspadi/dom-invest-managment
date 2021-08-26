@@ -12,6 +12,10 @@ export const links = [
     url: '/about'
   },
   {
+    title: 'Ипотека',
+    url: '/mortgage'
+  },
+  {
     title: 'Наши объекты',
     url: '/objects'
   },

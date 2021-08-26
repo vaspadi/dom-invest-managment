@@ -1,6 +1,5 @@
 <template lang="pug">
   div.contacts-page
-    Banner(title="Контакты")
     .container
       section.section
         ContactsList.contacts-page__list
@@ -8,7 +7,6 @@
 </template>
 
 <script>
-import Banner from '~/components/atoms/Banner'
 import ContactsList from '~/components/molecules/ContactsList'
 import Map from '~/components/atoms/Map'
 import { headTitles } from '~/content/data'
@@ -16,8 +14,11 @@ import { headTitles } from '~/content/data'
 export default {
   name: 'ContactsPage',
 
+  meta: {
+    bannerTitle: 'Контакты'
+  },
+
   components: {
-    Banner,
     ContactsList,
     Map
   },

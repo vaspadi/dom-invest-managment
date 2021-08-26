@@ -1,6 +1,5 @@
 <template lang="pug">
   div.about-page
-    Banner история компании <span>«Дом Инвест»</span>
     section.section.section_dark
       .container
         ArticleSection(:data="aboutCompany.chooseUs")
@@ -11,7 +10,6 @@
 </template>
 
 <script>
-import Banner from '~/components/atoms/Banner'
 import ArticleSection from '~/components/atoms/ArticleSection'
 import PartnersSection from '~/components/atoms/PartnersSection'
 import { headTitles, aboutCompany, partners } from '~/content/data'
@@ -19,8 +17,11 @@ import { headTitles, aboutCompany, partners } from '~/content/data'
 export default {
   name: 'AboutPage',
 
+  meta: {
+    bannerTitle: 'история компании «Дом Инвест»'
+  },
+
   components: {
-    Banner,
     ArticleSection,
     PartnersSection
   },

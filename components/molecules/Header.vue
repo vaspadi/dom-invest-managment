@@ -85,6 +85,7 @@ export default {
   &__nav {
     overflow-x: scroll;
     overflow-y: hidden;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
       display: none;

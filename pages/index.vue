@@ -29,6 +29,8 @@ export default {
     SliderBlock
   },
 
+  layout: 'no-banner',
+
   data () {
     return {
       videoSlider,

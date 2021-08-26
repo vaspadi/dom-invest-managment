@@ -1,7 +1,5 @@
 <template lang="pug">
   div.projects-page
-    Banner(title="Проекты")
-
     section.section
       .container.projects-page__content
         CardList(:data="projects" small)
@@ -9,15 +7,17 @@
 </template>
 
 <script>
-import Banner from '~/components/atoms/Banner'
 import CardList from '~/components/molecules/CardList'
 import { headTitles } from '~/content/data'
 
 export default {
   name: 'ProjectsPage',
 
+  meta: {
+    bannerTitle: 'Проекты'
+  },
+
   components: {
-    Banner,
     CardList
   },
 
