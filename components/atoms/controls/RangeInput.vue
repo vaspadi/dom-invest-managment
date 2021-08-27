@@ -1,8 +1,17 @@
 <template lang="pug">
-  .range
-    p.range__placeholder Первоначальный взнос
-    input.range__input(v-model="value" @input="validateValue")
-    input.range__range(type="range" v-model="value" :min="min" :max="max" @input="validateValue")
+  .range(:class="{ range_active: !value }" @input="$emit('input', curValue)")
+    label.range__label
+      input.range__input(v-model="curValue" :disabled="value" @input="validateCurValue")
+      p.range__placeholder(v-if="placeholder") {{ placeholder }}
+    input.range__range(
+      type="range"
+      tabindex="-1"
+      v-model="curValue"
+      :step="step"
+      :min="min"
+      :max="max"
+      :disabled="value"
+      @input="validateCurValue")
 </template>
 
 <script>
@@ -10,6 +19,21 @@ export default {
   name: 'RangeInput',
 
   props: {
+    placeholder: {
+      type: String,
+      default: ''
+    },
+
+    value: {
+      type: Number,
+      default: null
+    },
+
+    default: {
+      type: Number,
+      default: 0
+    },
+
     min: {
       type: Number,
       default: 0
@@ -17,25 +41,31 @@ export default {
 
     max: {
       type: Number,
-      default: 1000
+      default: 100000000
+    },
+
+    step: {
+      type: Number,
+      default: 1
     }
   },
 
   data () {
     return {
-      value: 50
+      curValue: this.value || this.default
     }
   },
 
   methods: {
-    validateValue () {
-      this.value = this.value.replace(/[^0-9]/, '')
+    validateCurValue () {
+      this.curValue = this.curValue.replace(/[^0-9]/g, '')
 
-      if (this.value < this.min) {
-        this.value = this.min
-      } else if (this.value > this.max) {
-        this.value = this.max
-      }
+      const curValue = this.curValue
+      const min = this.min
+      const max = this.max
+
+      this.curValue = curValue < min ? min : curValue
+      this.curValue = curValue > max ? max : curValue
     }
   }
 }
@@ -46,8 +76,15 @@ export default {
 
 .range {
   position: relative;
-  width: 300px;
   font-size: 16px;
+
+  &_active {
+    &:hover {
+      .range__placeholder {
+        color: #000
+      }
+    }
+  }
 
   &__placeholder {
     position: absolute;
@@ -56,20 +93,24 @@ export default {
     font-size: 1em;
     text-transform: lowercase;
     font-weight: 700;
-    //opacity: 0.5;
+    color: rgba(0,0,0, 0.5)
   }
 
   &__input {
     width: 100%;
     font-size: 1.2em;
     font-weight: 700;
-    background-color: $--light-block-bg;
-    //padding: 1em;
+    background-color: #fff;
     padding-top: 1.7em;
     padding-bottom: 0.4em;
     padding-left: 1em;
+    border: 1px solid darken($--light-block-bg, 3%);
+    border-radius: $--bd-radius;
+    transition: all 0.1s;
 
-    border: none;
+    &:focus + .range__placeholder {
+      color: #000
+    }
   }
 
   &__range {
@@ -78,10 +119,10 @@ export default {
     left: 0;
     right: 0;
     width: 100%;
-    height: 0.25em;
+    height: 0.2em;
     font-size: inherit;
     background-color: #000;
-    border-radius: 0.5em/100%;
+    border-radius: 0 0 $--bd-radius $--bd-radius;
     transform: translateY(-100%);
     appearance: none;
 
