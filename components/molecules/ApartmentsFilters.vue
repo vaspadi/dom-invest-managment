@@ -2,7 +2,6 @@
   aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}")
     TextInput.apartments-filters__control(placeholder="Название жилого комплекса")
     RangeInput.apartments-filters__control(placeholder="Потолок стоимости")
-    Select.apartments-filters__control
     RangeInput.apartments-filters__control(placeholder="Общая площадь")
     RangeInput.apartments-filters__control(placeholder="Жилая площадь")
     RangeInput.apartments-filters__control(placeholder="Этажность" :max="40")
@@ -11,15 +10,13 @@
 <script>
 import TextInput from '~/components/atoms/controls/TextInput'
 import RangeInput from '~/components/atoms/controls/RangeInput'
-import Select from '~/components/atoms/controls/Select'
 
 export default {
   name: 'ApartmentsFilters',
 
   components: {
     TextInput,
-    RangeInput,
-    Select
+    RangeInput
   },
 
   data () {

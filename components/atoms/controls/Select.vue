@@ -2,18 +2,10 @@
   .select(v-click-outside="hideDropdown" @click="active = true")
     p.select__value(:class="{'select__value_active': active}") {{ value }}
     ul.select__list(v-if="active")
-      li.select__item
+      li.select__item(v-for="(item, index) in data" :key="index")
         label.select__label
-          input.select__input(type="radio" v-model="value" value="Петербург" :name="name")
-          p.select__text Петербург
-      li.select__item
-        label.select__label
-          input.select__input(type="radio" v-model="value" value="Калининград" :name="name")
-          p.select__text Калининград
-      li.select__item
-        label.select__label
-          input.select__input(type="radio" v-model="value" value="Волгоград" :name="name")
-          p.select__text Волгоград
+          input.select__input(type="radio" v-model="value" value="item" :name="name")
+          p.select__text item
 
 </template>
 
@@ -25,19 +17,24 @@ export default {
     name: {
       type: String,
       default: ''
+    },
+
+    data: {
+      type: Array,
+      required: true
     }
   },
 
   data () {
     return {
       active: false,
-      value: 'Петербург'
+      value: ''
     }
   },
 
   watch: {
     value () {
-      this.active = false
+      this.hideDropdown()
     }
   },
 
