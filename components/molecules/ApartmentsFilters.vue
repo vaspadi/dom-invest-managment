@@ -4,25 +4,29 @@
     RangeInput.apartments-filters__control(placeholder="Потолок стоимости")
     RangeInput.apartments-filters__control(placeholder="Общая площадь")
     RangeInput.apartments-filters__control(placeholder="Жилая площадь")
+    RadioButtons.apartments-filters__control(:data="numRooms")
     RangeInput.apartments-filters__control(placeholder="Этажность" :max="40")
 </template>
 
 <script>
 import TextInput from '~/components/atoms/controls/TextInput'
 import RangeInput from '~/components/atoms/controls/RangeInput'
+import RadioButtons from '~/components/atoms/controls/RadioButtons'
 
 export default {
   name: 'ApartmentsFilters',
 
   components: {
     TextInput,
-    RangeInput
+    RangeInput,
+    RadioButtons
   },
 
   data () {
     return {
       fixed: false,
-      elTop: 0
+      elTop: 0,
+      numRooms: ['Ст', '1', '2', '3+']
     }
   },
 
