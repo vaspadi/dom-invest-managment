@@ -1,0 +1,37 @@
+.input {
+  position: relative;
+  font-size: 16px;
+
+  &:hover {
+    p {
+    color: #000
+    }
+  }
+
+  p {
+    position: absolute;
+    left: 1.2em;
+    top: 0.5em;
+    font-size: 1em;
+    text-transform: lowercase;
+    font-weight: 700;
+    color: rgba(0,0,0, 0.5)
+  }
+
+  input[type="text"] {
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color: #fff;
+    padding-top: 1.7em;
+    padding-bottom: 0.4em;
+    padding-left: 1em;
+    border: 1px solid darken($--light-block-bg, 3%);
+    border-radius: $--bd-radius;
+    transition: all 0.1s;
+
+    &:focus + p {
+      color: #000
+    }
+  }
+}

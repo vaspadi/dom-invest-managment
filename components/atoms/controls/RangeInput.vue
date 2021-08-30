@@ -1,7 +1,7 @@
 <template lang="pug">
-  .range(:class="{ range_active: !value }" @input="$emit('input', curValue)")
+  .range.input(:class="{ 'range_active': !value }" @input="$emit('input', curValue)")
     label.range__label
-      input.range__input(v-model="curValue" :disabled="value" @input="validateCurValue")
+      input.range__input(v-model="curValue" type="text" :disabled="value" @input="validateCurValue")
       p.range__placeholder(v-if="placeholder") {{ placeholder }}
     input.range__range(
       type="range"
@@ -10,6 +10,7 @@
       :step="step"
       :min="min"
       :max="max"
+      multiple
       :disabled="value"
       @input="validateCurValue")
 </template>
@@ -75,44 +76,6 @@ export default {
 @import "assets/scss/base/variables";
 
 .range {
-  position: relative;
-  font-size: 16px;
-
-  &_active {
-    &:hover {
-      .range__placeholder {
-        color: #000
-      }
-    }
-  }
-
-  &__placeholder {
-    position: absolute;
-    left: 1.2em;
-    top: 0.5em;
-    font-size: 1em;
-    text-transform: lowercase;
-    font-weight: 700;
-    color: rgba(0,0,0, 0.5)
-  }
-
-  &__input {
-    width: 100%;
-    font-size: 1.2em;
-    font-weight: 700;
-    background-color: #fff;
-    padding-top: 1.7em;
-    padding-bottom: 0.4em;
-    padding-left: 1em;
-    border: 1px solid darken($--light-block-bg, 3%);
-    border-radius: $--bd-radius;
-    transition: all 0.1s;
-
-    &:focus + .range__placeholder {
-      color: #000
-    }
-  }
-
   &__range {
     position: absolute;
     top: 100%;

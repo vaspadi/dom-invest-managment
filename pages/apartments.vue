@@ -1,12 +1,20 @@
 <template lang="pug">
   div.apartments-page
+    section.section.container
+      ApartmentsFilters
 </template>
 
 <script>
+import ApartmentsFilters from '~/components/molecules/ApartmentsFilters'
+
 import { headTitles } from '~/content/data'
 
 export default {
   name: 'ApartmentsPage',
+
+  components: {
+    ApartmentsFilters
+  },
 
   meta: {
     bannerTitle: 'Чистый воздух и тишина'
@@ -23,3 +31,9 @@ export default {
   })
 }
 </script>
+
+<style lang="scss">
+.apartments-page {
+  margin-bottom: 200vh;
+}
+</style>
