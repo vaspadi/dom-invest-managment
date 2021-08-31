@@ -1,5 +1,5 @@
 <template lang="pug">
-  .from-to-input.input
+  .from-to-input.input(@input="$emit('input', value)")
     input.from-to-input__input(type="text" v-model="curValue" @input="validateCurValue")
     p.from-to-input__placeholder {{ placeholder }}
     div.from-to-input__from-to {{ from ? 'От' : 'До'}}

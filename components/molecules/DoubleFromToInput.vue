@@ -1,5 +1,5 @@
 <template lang="pug">
-  .double-from-to-input
+  .double-from-to-input(@input="$emit('input', value)")
     FromToInput.double-from-to-input__input(from :placeholder="placeholder")
     FromToInput.double-from-to-input__input
 </template>
@@ -18,6 +18,12 @@ export default {
     placeholder: {
       type: String,
       default: ''
+    }
+  },
+
+  data () {
+    return {
+      value: null
     }
   }
 }

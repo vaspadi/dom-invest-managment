@@ -1,6 +1,6 @@
 <template lang="pug">
-  aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}")
-    TextInput.apartments-filters__control(placeholder="Название жилого комплекса")
+  aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}" )
+    TextInput.apartments-filters__control(placeholder="Название жилого комплекса" @input="setFilterComplex")
     RadioButtons.apartments-filters__control(:data="numRooms" placeholder="Количество комнат" type="radio")
     FromToInput.apartments-filters__control(placeholder="Стоимость" icon)
     RangeInput.apartments-filters__control(placeholder="Общая площадь" square)
@@ -30,7 +30,10 @@ export default {
     return {
       fixed: false,
       elTop: 0,
-      numRooms: ['Ст', '1', '2', '3+']
+      numRooms: ['1', '2', '3+'],
+      filters: {
+        complex: ''
+      }
     }
   },
 
@@ -51,6 +54,10 @@ export default {
   methods: {
     doFixed () {
       this.fixed = window.pageYOffset >= this.elTop - 150
+    },
+
+    setFilterComplex (value) {
+      this.filters.complex = value
     }
   }
 }

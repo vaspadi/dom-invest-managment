@@ -1,5 +1,5 @@
 <template lang="pug">
-  .radio-buttons
+  .radio-buttons(@input="$emit('input', value)")
     p.radio-buttons__placeholder {{ placeholder }}
     .radio-buttons__list
       label.radio-buttons__label(v-for="(item, index) in data" :key="index")
