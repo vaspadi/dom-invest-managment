@@ -2,16 +2,18 @@
   aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}")
     TextInput.apartments-filters__control(placeholder="Название жилого комплекса")
     RadioButtons.apartments-filters__control(:data="numRooms" placeholder="Количество комнат" type="radio")
-    RangeInput.apartments-filters__control(placeholder="Потолок стоимости")
+    FromToInput.apartments-filters__control(placeholder="Стоимость" icon)
     RangeInput.apartments-filters__control(placeholder="Общая площадь" square)
     RangeInput.apartments-filters__control(placeholder="Жилая площадь" square)
-    RangeInput.apartments-filters__control(placeholder="Этажность" :max="40")
+    DoubleFromToInput.apartments-filters__control(placeholder="Этажность")
 </template>
 
 <script>
 import TextInput from '~/components/atoms/controls/TextInput'
 import RangeInput from '~/components/atoms/controls/RangeInput'
 import RadioButtons from '~/components/atoms/controls/RadioButtons'
+import FromToInput from '~/components/atoms/controls/FromToInput'
+import DoubleFromToInput from '~/components/molecules/DoubleFromToInput'
 
 export default {
   name: 'ApartmentsFilters',
@@ -19,7 +21,9 @@ export default {
   components: {
     TextInput,
     RangeInput,
-    RadioButtons
+    RadioButtons,
+    FromToInput,
+    DoubleFromToInput
   },
 
   data () {

@@ -3,8 +3,8 @@
     label.range-input__label
       input.range-input__input(v-model="curValue" type="text" :disabled="value" @input="validateCurValue")
       p.range-input__placeholder(v-if="placeholder") {{ placeholder }}
-      icon.range-input__icon(v-if="icon" icon="ruble-sign")
-      div.range-input__square(v-if="square") м<sup>2</sup>
+      icon.range-input__icon.input__icon(v-if="icon" icon="ruble-sign")
+      div.range-input__square.input__icon(v-if="square") м<sup>2</sup>
     input.range-input__range(
       type="range"
       tabindex="-1"
@@ -28,8 +28,8 @@ export default {
     },
 
     icon: {
-      type: String,
-      default: ''
+      type: Boolean,
+      default: false
     },
 
     square: {
@@ -90,18 +90,6 @@ export default {
 .range-input {
 
   &__placeholder {
-    pointer-events: none;
-  }
-
-  &__square,
-  &__icon {
-    position: absolute;
-    font-size: 0.8em;
-    font-weight: 700;
-    line-height: 1;
-    color: rgba(0,0,0,0.7);
-    top: 55%;
-    right: 20px;
     pointer-events: none;
   }
 
