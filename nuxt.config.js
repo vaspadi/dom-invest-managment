@@ -1,5 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  env: {
+    apiUrl: process.env.API_URL || 'https://api.o2-club.ru/api'
+  },
+
   head: {
     title: 'main',
     htmlAttrs: {
@@ -7,12 +11,26 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: ''
+      },
+      {
+        name: 'format-detection',
+        content: 'telephone=no'
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
     ]
   },
 
@@ -24,8 +42,16 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/ymapPlugin.js', mode: 'client' },
-    { src: '~/plugins/clickOutside', mode: 'client' }
+    {
+      src: '~/plugins/ymapPlugin.js',
+      mode: 'client'
+    },
+    {
+      src: '~/plugins/clickOutside',
+      mode: 'client'
+    },
+    '~/http/api-client.js',
+    '~/repositories/index.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

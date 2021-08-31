@@ -2,18 +2,20 @@
   div.apartments-page
     section.section.container
       ApartmentsFilters
+      ApartmentsList
 </template>
 
 <script>
 import ApartmentsFilters from '~/components/molecules/ApartmentsFilters'
-
+import ApartmentsList from '~/components/molecules/ApartmentsList'
 import { headTitles } from '~/content/data'
 
 export default {
   name: 'ApartmentsPage',
 
   components: {
-    ApartmentsFilters
+    ApartmentsFilters,
+    ApartmentsList
   },
 
   meta: {
