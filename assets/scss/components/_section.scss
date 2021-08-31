@@ -1,0 +1,18 @@
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  @media screen and (max-width: 720px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  &_dark {
+    background-color: $--dark-bg;
+    color: #fff;
+  }
+
+  &_small {
+    padding-bottom: 0;
+  }
+}

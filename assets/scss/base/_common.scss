@@ -1,0 +1,32 @@
+*,
+::after,
+::before {
+  font-family: $--font-main;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+// *::selection {
+//   background-color: $--active;
+// }
+
+body {
+  background-color: #f8f8f8;
+}
+
+ul {
+  list-style: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}

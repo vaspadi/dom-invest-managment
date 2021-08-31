@@ -1,0 +1,28 @@
+.button {
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: lowercase;
+  white-space: nowrap;
+  color: #000;
+  background-color: transparent;
+  padding: 10px 40px;
+  border: 2px solid #000;
+  transition: border 0.2s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &_light {
+    color: #fff;
+    border-color: #fff;
+
+    &:hover,
+    &:focus {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
