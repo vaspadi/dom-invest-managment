@@ -18,8 +18,6 @@
 </template>
 
 <script>
-// import { mapState } from 'vuex'
-
 export default {
   name: 'MortgageBankCard',
 
@@ -44,15 +42,6 @@ export default {
       default: 0
     }
   }
-  //
-  // computed: {
-  //   monthSum () {
-  //   //   const firstAction = (this.mortgage - this.payment) * (this.rate / 12)
-  //   //   const secondAction = 1 - (1 + this.rate / 12) * (1 - this.period * 12)
-  //   //   return firstAction / secondAction
-  //     return 'asdf'
-  //   }
-  // }
 }
 </script>
 

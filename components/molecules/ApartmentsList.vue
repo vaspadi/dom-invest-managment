@@ -1,43 +1,47 @@
 <template lang="pug">
   .apartments-list
-    ul.apartments-list__card
-      li.apartments-list__item(v-for="(item, index) in apartments" :key="index")
-        div {{ item }}
+    ul.apartments-list__list
+      li.apartments-list__item(v-for="index in 3" :key="index")
+        ApartmentsCard
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
-// import ApartmentsCard from '~/components/atoms/ApartmentsCard'
+// import { mapState, mapActions } from 'vuex'
+import ApartmentsCard from '~/components/atoms/ApartmentsCard'
 
 export default {
   name: 'ApartmentsList',
 
   components: {
-    // ApartmentsCard
-  },
+    ApartmentsCard
+  }
 
   // asyncData (ctx) {
   //   ctx.getApartments()
   // },
 
-  computed: {
-    ...mapState('apartments', {
-      apartments: 'apartments'
-    })
-  },
+  // computed: {
+  //   ...mapState('apartments', {
+  //     apartments: 'apartments'
+  //   })
+  // },
 
-  mounted () {
-    this.getApartment()
-  },
-
-  methods: {
-    ...mapActions('apartments', {
-      getApartment: 'getApartments'
-    })
-  }
+  // mounted () {
+  //   this.getApartment()
+  // },
+  //
+  // methods: {
+  //   ...mapActions('apartments', {
+  //     getApartment: 'getApartments'
+  //   })
+  // }
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+.apartments-list {
+  &__item {
+    margin-bottom: 20px;
+  }
+}
 </style>

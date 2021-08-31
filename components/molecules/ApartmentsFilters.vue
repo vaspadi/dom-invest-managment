@@ -1,7 +1,7 @@
 <template lang="pug">
   aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}" )
     TextInput.apartments-filters__control(placeholder="Название жилого комплекса" @input="setFilterComplex")
-    RadioButtons.apartments-filters__control(:data="numRooms" placeholder="Количество комнат" type="radio")
+    RadioButtons.apartments-filters__control(:data="numRooms" placeholder="Количество комнат" @change="show" type="checkbox" name="rooms")
     FromToInput.apartments-filters__control(placeholder="Стоимость" icon)
     RangeInput.apartments-filters__control(placeholder="Общая площадь" square)
     RangeInput.apartments-filters__control(placeholder="Жилая площадь" square)
@@ -58,6 +58,11 @@ export default {
 
     setFilterComplex (value) {
       this.filters.complex = value
+    },
+
+    show (value) {
+      // eslint-disable-next-line no-console
+      console.log(value)
     }
   }
 }
@@ -66,6 +71,7 @@ export default {
 <style lang="scss">
 @import "assets/scss/base/variables";
 .apartments-filters {
+  position: absolute;
   width: 350px;
   background-color: $--light-block-bg;
   max-height: 75vh;

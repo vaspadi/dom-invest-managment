@@ -3,7 +3,7 @@
     p.radio-buttons__placeholder {{ placeholder }}
     .radio-buttons__list
       label.radio-buttons__label(v-for="(item, index) in data" :key="index")
-        input.radio-buttons__button(:type="type" v-model="value" :value="item")
+        input.radio-buttons__button(:type="type" v-model="value" :name="name" :value="item")
         p.radio-buttons__text {{ item }}
 </template>
 
@@ -36,6 +36,14 @@ export default {
   data () {
     return {
       value: []
+    }
+  },
+
+  watch: {
+    value (nextValue, prevValue) {
+      if (nextValue !== prevValue) {
+        this.$emit('changeValue', this.value)
+      }
     }
   }
 }

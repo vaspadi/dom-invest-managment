@@ -2,7 +2,7 @@
   div.apartments-page
     section.section.container
       ApartmentsFilters
-      ApartmentsList
+      ApartmentsList.apartments-page__list
 </template>
 
 <script>
@@ -37,5 +37,9 @@ export default {
 <style lang="scss">
 .apartments-page {
   margin-bottom: 200vh;
+
+  &__list {
+    margin-left: 400px;
+  }
 }
 </style>
