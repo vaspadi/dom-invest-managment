@@ -1,10 +1,10 @@
 <template lang="pug">
   aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}")
     TextInput.apartments-filters__control(placeholder="Название жилого комплекса")
+    RadioButtons.apartments-filters__control(:data="numRooms" placeholder="Количество комнат" type="radio")
     RangeInput.apartments-filters__control(placeholder="Потолок стоимости")
     RangeInput.apartments-filters__control(placeholder="Общая площадь")
     RangeInput.apartments-filters__control(placeholder="Жилая площадь")
-    RadioButtons.apartments-filters__control(:data="numRooms")
     RangeInput.apartments-filters__control(placeholder="Этажность" :max="40")
 </template>
 

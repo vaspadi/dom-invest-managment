@@ -1,8 +1,10 @@
 <template lang="pug">
   .radio-buttons
-    label.radio-buttons__label(v-for="(item, index) in data" :key="index")
-      input.radio-buttons__button(:type="type" v-model="value" :value="item")
-      p.radio-buttons__text {{ item }}
+    p.radio-buttons__placeholder {{ placeholder }}
+    .radio-buttons__list
+      label.radio-buttons__label(v-for="(item, index) in data" :key="index")
+        input.radio-buttons__button(:type="type" v-model="value" :value="item")
+        p.radio-buttons__text {{ item }}
 </template>
 
 <script>
@@ -18,6 +20,11 @@ export default {
     type: {
       type: String,
       default: 'radio'
+    },
+
+    placeholder: {
+      type: String,
+      default: ''
     },
 
     data: {
@@ -39,7 +46,24 @@ export default {
 
 .radio-buttons {
   display: flex;
+  flex-direction: column;
   font-size: 16px;
+
+  &:hover .radio-buttons__placeholder {
+    color: #000;
+  }
+
+  &__placeholder {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: lowercase;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
+
+  &__list {
+    display: flex;
+  }
 
   &__label {
     flex: 1;
@@ -47,7 +71,6 @@ export default {
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    //color: rgba(0,0,0,0.5);
     background-color: #fff;
     border: 1px solid darken($--light-block-bg, 3%);
     border-right-width: 0;
