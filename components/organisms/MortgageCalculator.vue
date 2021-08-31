@@ -2,12 +2,31 @@
   .mortgage-calculator
     MortgageForm
     .mortgage-calculator__column
-      MortgageDescription.mortgage-calculator__description
+      MortgageBankCard.mortgage-calculator__card(
+        img="banks/sberbank.svg"
+        :rate="rate.sber"
+        :period="period"
+        :month-sum="monthSum.sber")
+
+      MortgageBankCard.mortgage-calculator__card(
+        img="banks/sankt-bank.png"
+        :rate="rate.sankt"
+        :period="period"
+        :month-sum="monthSum.sankt")
+
+      MortgageBankCard.mortgage-calculator__card(
+        img="banks/vtb-bank.svg"
+        :rate="rate.vtb"
+        :period="period"
+        :month-sum="monthSum.vtb")
+
       MortgageNotification.mortgage-calculator__notification
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
 import MortgageForm from '~/components/molecules/MortgageForm'
+import MortgageBankCard from '~/components/atoms/MortgageBankCard'
 import MortgageDescription from '~/components/atoms/MortgageDescription'
 import MortgageNotification from '~/components/atoms/MortgageNotification'
 
@@ -17,7 +36,19 @@ export default {
   components: {
     MortgageForm,
     MortgageDescription,
+    MortgageBankCard,
     MortgageNotification
+  },
+
+  computed: {
+    ...mapState('mortgage', {
+      rate: 'rate',
+      period: 'period'
+    }),
+
+    ...mapGetters('mortgage', {
+      monthSum: 'monthSum'
+    })
   }
 }
 </script>
@@ -41,12 +72,16 @@ export default {
     flex-direction: column;
   }
 
-  &__description {
-    margin-bottom: 40px;
+  &__card {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: auto;
+    }
   }
 
   &__notification {
-    height: 100%;
+    margin-top: auto;
   }
 }
 </style>

@@ -17,7 +17,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: $--light-block-bg;
-  padding: 40px;
+  padding: 20px;
   border-radius: $--bd-radius;
 
   &__image {

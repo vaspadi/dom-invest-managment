@@ -2,7 +2,11 @@ const CHANGE_PAYMENT = 'CHANGE_PAYMENT'
 const CHANGE_PERIOD = 'CHANGE_PERIOD'
 
 export const state = () => ({
-  rate: 8.2,
+  rate: {
+    sber: 7.7,
+    sankt: 8.7,
+    vtb: 8.2
+  },
   mortgage: 3000000,
   payment: 0,
   period: 10
@@ -30,8 +34,15 @@ export const actions = {
 
 export const getters = {
   monthSum: (state) => {
-    const firstAction = (state.mortgage - state.payment) * (state.rate / 12)
-    const secondAction = 1 - (1 + state.rate / 12) * (1 - state.period * 12)
-    return firstAction / secondAction
+    const objSum = {}
+
+    Object.keys(state.rate).forEach((key) => {
+      const firstAction = (state.mortgage - state.payment) * (state.rate[key] / 12)
+      const secondAction = 1 - (1 + state.rate[key] / 12) * (1 - state.period * 12)
+
+      objSum[key] = Math.round(firstAction / secondAction)
+    })
+
+    return objSum
   }
 }
