@@ -1,9 +1,11 @@
 <template lang="pug">
-  .range.input(:class="{ 'range_active': !value }" @input="$emit('input', curValue)")
-    label.range__label
-      input.range__input(v-model="curValue" type="text" :disabled="value" @input="validateCurValue")
-      p.range__placeholder(v-if="placeholder") {{ placeholder }}
-    input.range__range(
+  .range-input.input(:class="{ 'range_active': !value }" @input="$emit('input', curValue)")
+    label.range-input__label
+      input.range-input__input(v-model="curValue" type="text" :disabled="value" @input="validateCurValue")
+      p.range-input__placeholder(v-if="placeholder") {{ placeholder }}
+      icon.range-input__icon(v-if="icon" icon="ruble-sign")
+      div.range-input__square(v-if="square") м<sup>2</sup>
+    input.range-input__range(
       type="range"
       tabindex="-1"
       v-model="curValue"
@@ -23,6 +25,16 @@ export default {
     placeholder: {
       type: String,
       default: ''
+    },
+
+    icon: {
+      type: String,
+      default: ''
+    },
+
+    square: {
+      type: Boolean,
+      default: false
     },
 
     value: {
@@ -75,7 +87,24 @@ export default {
 <style lang="scss">
 @import "assets/scss/base/variables";
 
-.range {
+.range-input {
+
+  &__placeholder {
+    pointer-events: none;
+  }
+
+  &__square,
+  &__icon {
+    position: absolute;
+    font-size: 0.8em;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(0,0,0,0.7);
+    top: 55%;
+    right: 20px;
+    pointer-events: none;
+  }
+
   &__range {
     position: absolute;
     top: 100%;

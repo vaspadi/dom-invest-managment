@@ -1,12 +1,13 @@
 <template lang="pug">
   .mortgage-form
     form.mortgage-form__form
-      RangeInput.mortgage-form__range(placeholder="Стоимость недвижемости" :value="mortgage")
+      RangeInput.mortgage-form__range(placeholder="Стоимость недвижемости" :value="mortgage" icon="ruble-sign")
       RangeInput.mortgage-form__range(
         placeholder="Первоначальный взнос"
         :default="mortgage * 0.1"
         :max="mortgage * 0.9"
-        @input="changePayment($event)")
+        @input="changePayment($event)"
+        icon="ruble-sign")
       RangeInput.mortgage-form__range(
         placeholder="Срок"
         :default="period"

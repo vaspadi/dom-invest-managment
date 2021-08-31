@@ -3,8 +3,8 @@
     TextInput.apartments-filters__control(placeholder="Название жилого комплекса")
     RadioButtons.apartments-filters__control(:data="numRooms" placeholder="Количество комнат" type="radio")
     RangeInput.apartments-filters__control(placeholder="Потолок стоимости")
-    RangeInput.apartments-filters__control(placeholder="Общая площадь")
-    RangeInput.apartments-filters__control(placeholder="Жилая площадь")
+    RangeInput.apartments-filters__control(placeholder="Общая площадь" square)
+    RangeInput.apartments-filters__control(placeholder="Жилая площадь" square)
     RangeInput.apartments-filters__control(placeholder="Этажность" :max="40")
 </template>
 
