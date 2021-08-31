@@ -46,7 +46,10 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
-
+  server: {
+    port: process.env.VUE_APP_PORT || 3000,
+    host: '0.0.0.0'
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {
