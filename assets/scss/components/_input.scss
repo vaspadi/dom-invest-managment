@@ -19,7 +19,8 @@
     color: rgba(0,0,0, 0.5)
   }
 
-  input[type="text"] {
+  input[type="text"],
+  input[type="number"] {
     width: 100%;
     font-size: 1.2em;
     font-weight: 700;
@@ -30,9 +31,18 @@
     border: 1px solid darken($--light-block-bg, 3%);
     border-radius: $--bd-radius;
     transition: all 0.1s;
+    appearance: none;
+    -moz-appearance: textfield;
+
 
     &:focus + p {
       color: #000
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
 

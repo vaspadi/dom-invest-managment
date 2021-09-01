@@ -1,9 +1,14 @@
 <template lang="pug">
-  .radio-buttons(@input="$emit('input', value)")
+  .radio-buttons
     p.radio-buttons__placeholder {{ placeholder }}
     .radio-buttons__list
       label.radio-buttons__label(v-for="(item, index) in data" :key="index")
-        input.radio-buttons__button(:type="type" v-model="value" :name="name" :value="item")
+        input.radio-buttons__button(
+          :type="type"
+          :name="name"
+          :value="item"
+          v-model="value"
+          @change="$emit('change', value)")
         p.radio-buttons__text {{ item }}
 </template>
 
@@ -36,14 +41,6 @@ export default {
   data () {
     return {
       value: []
-    }
-  },
-
-  watch: {
-    value (nextValue, prevValue) {
-      if (nextValue !== prevValue) {
-        this.$emit('changeValue', this.value)
-      }
     }
   }
 }

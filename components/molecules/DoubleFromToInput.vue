@@ -1,7 +1,7 @@
 <template lang="pug">
   .double-from-to-input(@input="$emit('input', value)")
-    FromToInput.double-from-to-input__input(from :placeholder="placeholder")
-    FromToInput.double-from-to-input__input
+    FromToInput.double-from-to-input__input(from :placeholder="placeholder" @input="setValue({ first: $event })")
+    FromToInput.double-from-to-input__input(@input="setValue({second: $event})")
 </template>
 
 <script>
@@ -23,7 +23,14 @@ export default {
 
   data () {
     return {
-      value: null
+      value: [0, 100]
+    }
+  },
+
+  methods: {
+    setValue ({ first, second }) {
+      this.value[0] = +first || this.value[0]
+      this.value[1] = +second || this.value[1]
     }
   }
 }
