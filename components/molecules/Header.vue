@@ -150,11 +150,6 @@ export default {
       padding: 5px;
     }
 
-    &_active,
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
   }
 
   &__phone {
