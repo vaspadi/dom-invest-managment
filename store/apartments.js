@@ -22,9 +22,15 @@ export const actions = {
     commit('SET_APARTMENTS', apartments)
   },
 
-  changeFilter ({ commit, state }, { value, filter }) {
+  async getApartmentsByFilters ({ commit, state }) {
+    const apartments = await this.$apartmentsRepo.getByFilters(state.filters)
+    commit('SET_APARTMENTS', apartments)
+  },
+
+  changeFilter ({ commit, state, dispatch }, { value, filter }) {
     if (state.filters[filter] !== value || Array.isArray(value)) {
       commit('SET_FILTER', { value, filter })
+      dispatch('getApartmentsByFilters')
     }
   }
 }

@@ -14,21 +14,21 @@
     FromToInput.apartments-filters__control(
       icon
       placeholder="Стоимость"
-      @input="changeFilter({value: $event, filter: 'price'})")
+      @input="changeFilter({value: $event, filter: 'cost'})")
 
     RangeInput.apartments-filters__control(
       square
       placeholder="Общая площадь"
-      @input="changeFilter({value: $event, filter: 'totalArea'})")
+      @input="changeFilter({value: $event, filter: 'apartmentArea'})")
 
     RangeInput.apartments-filters__control(
       square
       placeholder="Жилая площадь"
-      @input="changeFilter({value: $event, filter: 'floorArea'})")
+      @input="changeFilter({value: $event, filter: 'livingArea'})")
 
     DoubleFromToInput.apartments-filters__control(
       placeholder="Этажность"
-      @input="changeFilter({value: $event, filter: 'height'})")
+      @input="changeFilter({value: $event, filter: 'floorNum'})")
 </template>
 
 <script>

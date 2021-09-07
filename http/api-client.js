@@ -7,9 +7,18 @@ export default function ({ $axios }, inject) {
     }
   })
 
+  $api.interceptors.request.use(
+    (config) => {
+      return config
+    },
+    (error) => {
+      return Promise.reject(error)
+    }
+  )
+
   $api.interceptors.response.use(
     (response) => {
-      return response.data.data
+      return response.data
     }
   )
 
