@@ -1,8 +1,9 @@
 <template lang="pug">
   aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}" )
-    TextInput.apartments-filters__control(
-      placeholder="Название жилого комплекса"
-      @input="changeFilter({value: $event, filter: 'complex'})")
+    Select.apartments-filters__control(
+      placeholder="Жилой комплекс"
+      name="complex"
+      :data="complexes")
 
     RadioButtons.apartments-filters__control(
       :data="numRooms"
@@ -19,11 +20,13 @@
     RangeInput.apartments-filters__control(
       square
       placeholder="Общая площадь"
+      :max="150"
       @input="changeFilter({value: $event, filter: 'apartmentArea'})")
 
     RangeInput.apartments-filters__control(
       square
       placeholder="Жилая площадь"
+      :max="100"
       @input="changeFilter({value: $event, filter: 'livingArea'})")
 
     DoubleFromToInput.apartments-filters__control(
@@ -34,6 +37,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import TextInput from '~/components/atoms/controls/TextInput'
+import Select from '~/components/atoms/controls/Select'
 import RangeInput from '~/components/atoms/controls/RangeInput'
 import RadioButtons from '~/components/atoms/controls/RadioButtons'
 import FromToInput from '~/components/atoms/controls/FromToInput'
@@ -44,6 +48,7 @@ export default {
 
   components: {
     TextInput,
+    Select,
     RangeInput,
     RadioButtons,
     FromToInput,
@@ -54,6 +59,7 @@ export default {
     return {
       fixed: false,
       elTop: 0,
+      complexes: ['Кислород'],
       numRooms: ['1', '2', '3+']
     }
   },
