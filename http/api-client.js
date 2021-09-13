@@ -1,6 +1,6 @@
 export default function ({ $axios }, inject) {
   const $api = $axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: process.env.apiUrl,
     timeout: 5000,
     headers: {
       'Content-Type': 'application/json'

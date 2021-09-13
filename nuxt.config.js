@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   env: {
-    apiUrl: process.env.API_URL || 'https://api.o2-club.ru/api'
+    apiUrl: process.env.API_URL || 'http://localhost:5000/api'
   },
 
   head: {
