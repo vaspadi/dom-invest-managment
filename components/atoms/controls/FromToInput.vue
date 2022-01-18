@@ -1,6 +1,6 @@
 <template lang="pug">
-  .from-to-input.input(@input="$emit('input', value)")
-    input.from-to-input__input(type="text" v-model="curValue" @input="validateCurValue")
+  .from-to-input.input
+    input.from-to-input__input(type="number" v-model="value" @input="$emit('input', value)")
     p.from-to-input__placeholder {{ placeholder }}
     div.from-to-input__from-to {{ from ? 'От' : 'До'}}
     icon.range-input__icon.input__icon(v-if="icon" icon="ruble-sign")
@@ -29,13 +29,7 @@ export default {
 
   data () {
     return {
-      curValue: null
-    }
-  },
-
-  methods: {
-    validateCurValue () {
-      this.curValue = this.curValue.replace(/[^0-9]/g, '')
+      value: null
     }
   }
 }

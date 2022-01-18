@@ -3,16 +3,38 @@
     .apartments-card__no-image
       icon.apartments-card__no-image-icon(icon="image")
     .apartments-card__content
-      h3.apartments-card__title Трехкомнатная квартира 64 м<sup>2</sup>
-      p.apartments-card__subtitle Очередь 1, Этаж 2, комнаты 2
-      p.apartments-card__tag Дата сдачи 29 декобря 2020
-      p.apartments-card__price 6000000
-        icon.ruble(icon="ruble-sign")
+      h3.apartments-card__title {{ floors[data.floorNum] || data.floorNum + ' комнатная' }} квартира {{data.apartmentArea}} м<sup>2</sup>
+      p.apartments-card__subtitle Очередь {{ data.queueNum }}, Этаж {{ data.floorNum }}, комнаты {{ data.roomsNum }}
+      p.apartments-card__tag Дата сдачи {{ data.deliveryDate || 'неопределена' }}
+      p.apartments-card__price {{ data.cost }}
+        icon.ruble(v-if="!isNaN(+data.cost) && data.cost" icon="ruble-sign")
+        span(v-if="!isNaN(+data.cost) && data.cost" icon="ruble-sign") или {{data.cost / +data.apartmentArea.replace(/,/, '.') }}
+          icon.ruble(v-if="!isNaN(+data.cost) && data.cost" icon="ruble-sign")
+          |  за м<sup>2</sup>
 </template>
 
 <script>
 export default {
-  name: 'ApartmentsCard'
+  name: 'ApartmentsCard',
+
+  props: {
+    data: {
+      type: Object,
+      required: true
+    }
+  },
+
+  data () {
+    return {
+      floors: {
+        1: 'Однокомнатная',
+        2: 'Двухкомнатная',
+        3: 'Трехкомнатная',
+        4: 'Четырехкомнатная',
+        5: 'Пятикомнатная'
+      }
+    }
+  }
 }
 </script>
 
@@ -63,12 +85,21 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
+    text-align: right;
     font-size: 25px;
     font-weight: 700;
+    line-height: 1.2;
+    text-transform: lowercase;
 
     .ruble {
       font-size: 0.8em;
       margin-left: 5px;
+    }
+
+    span {
+      display: block;
+      color: rgba(0,0,0,0.5);
+      font-size: 0.55em;
     }
   }
 }

@@ -34,6 +34,7 @@ export default {
 
   &__img {
     width: 100%;
+    height: inherit;
   }
 }
 </style>

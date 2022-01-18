@@ -1,11 +1,12 @@
 <template lang="pug">
   .select(v-click-outside="hideDropdown" @click="active = true")
+    p.select__placeholder(v-if="placeholder") {{ placeholder }}
     p.select__value(:class="{'select__value_active': active}") {{ value }}
     ul.select__list(v-if="active")
       li.select__item(v-for="(item, index) in data" :key="index")
         label.select__label
-          input.select__input(type="radio" v-model="value" value="item" :name="name")
-          p.select__text item
+          input.select__input(type="radio" v-model="value" :value="item" :name="name")
+          p.select__text {{ item }}
 
 </template>
 
@@ -14,6 +15,11 @@ export default {
   name: 'Select',
 
   props: {
+    placeholder: {
+      type: String,
+      default: ''
+    },
+
     name: {
       type: String,
       default: ''
@@ -28,7 +34,7 @@ export default {
   data () {
     return {
       active: false,
-      value: ''
+      value: this.data[0]
     }
   },
 
@@ -51,6 +57,20 @@ export default {
 
 .select {
   font-size: 16px;
+
+  &:hover {
+    .select__placeholder {
+      color: #000
+    }
+  }
+
+  &__placeholder {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: lowercase;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
 
   &__value {
     font-size: 1.2em;

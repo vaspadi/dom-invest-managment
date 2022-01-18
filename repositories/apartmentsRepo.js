@@ -1,10 +1,10 @@
 const url = 'apartment'
 
 export const $apartmentsRepo = request => ({
-  getByFilters: filters => request({
-    method: 'post',
-    url: `${url}/filters`,
-    data: filters
+  getByFilters: data => request({
+    method: 'POST',
+    url: `${url}/filter`,
+    data
   }),
 
   get: () => request({
