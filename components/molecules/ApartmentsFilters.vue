@@ -1,15 +1,43 @@
 <template lang="pug">
   aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}" )
-    TextInput.apartments-filters__control(placeholder="Название жилого комплекса" @input="setFilterComplex")
-    RadioButtons.apartments-filters__control(:data="numRooms" placeholder="Количество комнат" @change="show" type="checkbox" name="rooms")
-    FromToInput.apartments-filters__control(placeholder="Стоимость" icon)
-    RangeInput.apartments-filters__control(placeholder="Общая площадь" square)
-    RangeInput.apartments-filters__control(placeholder="Жилая площадь" square)
-    DoubleFromToInput.apartments-filters__control(placeholder="Этажность")
+    Select.apartments-filters__control(
+      placeholder="Жилой комплекс"
+      name="complex"
+      :data="complexes")
+
+    RadioButtons.apartments-filters__control(
+      :data="numRooms"
+      placeholder="Количество комнат"
+      type="checkbox"
+      name="rooms"
+      @change="changeFilter({value: $event, filter: 'roomsNum'})")
+
+    FromToInput.apartments-filters__control(
+      icon
+      placeholder="Стоимость"
+      @input="changeFilter({value: $event, filter: 'cost'})")
+
+    RangeInput.apartments-filters__control(
+      square
+      placeholder="Общая площадь"
+      :max="150"
+      @input="changeFilter({value: $event, filter: 'apartmentArea'})")
+
+    RangeInput.apartments-filters__control(
+      square
+      placeholder="Жилая площадь"
+      :max="100"
+      @input="changeFilter({value: $event, filter: 'livingArea'})")
+
+    DoubleFromToInput.apartments-filters__control(
+      placeholder="Этажность"
+      @input="changeFilter({value: $event, filter: 'floorNum'})")
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import TextInput from '~/components/atoms/controls/TextInput'
+import Select from '~/components/atoms/controls/Select'
 import RangeInput from '~/components/atoms/controls/RangeInput'
 import RadioButtons from '~/components/atoms/controls/RadioButtons'
 import FromToInput from '~/components/atoms/controls/FromToInput'
@@ -20,6 +48,7 @@ export default {
 
   components: {
     TextInput,
+    Select,
     RangeInput,
     RadioButtons,
     FromToInput,
@@ -30,11 +59,15 @@ export default {
     return {
       fixed: false,
       elTop: 0,
-      numRooms: ['1', '2', '3+'],
-      filters: {
-        complex: ''
-      }
+      complexes: ['Кислород'],
+      numRooms: ['1', '2', '3+']
     }
+  },
+
+  computed: {
+    ...mapState('apartments', {
+      filters: 'filters'
+    })
   },
 
   mounted () {
@@ -52,17 +85,12 @@ export default {
   },
 
   methods: {
+    ...mapActions('apartments', {
+      changeFilter: 'changeFilter'
+    }),
+
     doFixed () {
       this.fixed = window.pageYOffset >= this.elTop - 150
-    },
-
-    setFilterComplex (value) {
-      this.filters.complex = value
-    },
-
-    show (value) {
-      // eslint-disable-next-line no-console
-      console.log(value)
     }
   }
 }

@@ -7,7 +7,7 @@ tags: ['Новости', 'Скрытые новости']
 
 Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.
 
-<video-block video-id="Xy4cfjG0570"></video-block>
+<video-block video-id="VQ8Q2lerrOM"></video-block>
 
 Velit ultricies nec. Adipiscing sapien eu cursus aenean semper eget eos arcu. Eros aenean urna. Odio in neque.
 

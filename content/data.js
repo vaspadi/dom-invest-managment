@@ -9,6 +9,11 @@ export const headTitles = {
   contacts: 'Контакты'
 }
 
+export const phone = {
+  href: '88002000473',
+  value: '8 800 2000 473'
+}
+
 export const mainSlider = {
   title: 'Дома малой этажности, эстетичный внешний вид и стильный дизайн',
   images: [

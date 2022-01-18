@@ -49,7 +49,7 @@ export default {
 
     min: {
       type: Number,
-      default: 0
+      default: 1
     },
 
     max: {
@@ -71,7 +71,7 @@ export default {
 
   methods: {
     validateCurValue () {
-      this.curValue = this.curValue.replace(/[^0-9]/g, '')
+      this.curValue = this.curValue.replace(/^0+|[^0-9]/g, '')
 
       const curValue = this.curValue
       const min = this.min

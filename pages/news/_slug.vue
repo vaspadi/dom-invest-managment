@@ -17,6 +17,8 @@ export default {
     PrevNext
   },
 
+  layout: 'no-banner',
+
   async asyncData ({ $content, params, error }) {
     const slug = params.slug || 'index'
     const page = await $content(`news/${slug}`)
