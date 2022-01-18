@@ -1,6 +1,6 @@
 <template lang="pug">
   .partners-section
-    h2.partners-section__title.title Наши друзья и партнёры
+    h2.partners-section__title.title Наши друзья и партнеры
 
     ul.partners-section__list
       li.partners-section__item(v-for="(item, index) in list" :key="index")

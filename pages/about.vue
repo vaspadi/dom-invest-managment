@@ -18,7 +18,7 @@ export default {
   name: 'AboutPage',
 
   meta: {
-    bannerTitle: 'история компании «Дом Инвест»'
+    bannerTitle: 'Строим для комфортной жизни'
   },
 
   components: {

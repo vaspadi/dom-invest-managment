@@ -14,7 +14,7 @@ export default {
   name: 'ProjectsPage',
 
   meta: {
-    bannerTitle: 'Проекты'
+    bannerTitle: 'Новостройки'
   },
 
   components: {

@@ -4,7 +4,7 @@ export const links = [
     url: '/'
   },
   {
-    title: 'Проекты',
+    title: 'Новостройки',
     url: '/projects'
   },
   {
