@@ -20,10 +20,6 @@ export const links = [
     url: '/objects'
   },
   {
-    title: 'ИЖД',
-    url: '/houses'
-  },
-  {
     title: 'Новости',
     url: '/news'
   },
