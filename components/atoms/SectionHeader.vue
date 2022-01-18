@@ -53,7 +53,7 @@ export default {
 
   &__link {
     display: inline-block;
-    margin: 0 60px;
+    margin: 0 50px;
 
     @media screen and (max-width: 1140px) {
       font-size: 20px;

@@ -71,7 +71,7 @@ export default {
   }
 
   &__logo {
-    max-width: 250px;
+    max-width: 300px;
 
     @media screen and (max-width: 720px){
       margin-bottom: 30px;

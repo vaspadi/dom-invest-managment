@@ -1,7 +1,7 @@
 <template lang="pug">
   div.index-page
     MainSlider
-    InformationSection(:data="performanceSection")
+    //- InformationSection(:data="performanceSection")
     ObjectsSection
     NewsSection.index-page__news
     section.section
