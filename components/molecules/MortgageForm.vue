@@ -15,7 +15,6 @@
         :max="30"
         :step="5"
         @input="changePeriod($event)")
-      button.mortgage-form__button.button Подать заявку
 </template>
 
 <script>

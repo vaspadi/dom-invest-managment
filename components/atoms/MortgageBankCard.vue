@@ -74,7 +74,15 @@ export default {
   }
 
   &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
     line-height: 1;
+
+    &:last-child {
+      flex: 1.5
+    }
   }
 
   &__item-title {
@@ -83,6 +91,7 @@ export default {
   }
 
   &__value {
+    white-space: nowrap;
     font-size: 25px;
     font-weight: 700;
   }

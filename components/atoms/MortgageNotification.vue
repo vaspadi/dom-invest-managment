@@ -1,7 +1,7 @@
 <template lang="pug">
   .mortgage-notification
     img.mortgage-notification__image(src="~assets/img/bullseys.svg")
-    p.mortgage-notification__text 98% заявок, поданных с этой страницы, получают одобрение
+    p.mortgage-notification__text Узнайте примерный платёж, ставку и другие условия по ипотеке
 </template>
 
 <script>

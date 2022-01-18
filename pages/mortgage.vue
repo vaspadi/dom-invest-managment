@@ -11,7 +11,7 @@ export default {
   name: 'Mortgage',
 
   meta: {
-    bannerTitle: 'Ипотека'
+    bannerTitle: 'Ипотечный калькулятор'
   },
 
   components: {
