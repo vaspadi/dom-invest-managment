@@ -2,7 +2,7 @@ export const headTitles = {
   home: 'Главная',
   projects: 'Проекты',
   about: 'О компании',
-  objects: 'Наши объекты',
+  objects: 'Готовые проекты',
   houses: 'ИЖД',
   news: 'Новости',
   apartments: 'Квартиры',
@@ -10,8 +10,8 @@ export const headTitles = {
 }
 
 export const phone = {
-  href: '88002000473',
-  value: '8 800 2000 473'
+  href: '+74012509851',
+  value: '+7 4012 50 98 51'
 }
 
 export const mainSlider = {
@@ -96,9 +96,9 @@ export const mortgageSection = {
 }
 
 export const contacts = [
-  { title: 'Телефон', description: '+74012920883', icon: 'phone' },
-  { title: 'Почта', description: 'taxi.39@ya.ru', icon: 'envelope' },
-  { title: 'Адресс', description: 'Мусоргского, 10 к2 Калининград, Центральный район, Офис 2', icon: 'map-marker-alt' }
+  { title: 'Телефон', description: '+7 4012 50 98 51', icon: 'phone' },
+  { title: 'Почта', description: 'info@dominvest39.ru', icon: 'envelope' },
+  { title: 'Адрес', description: 'ул. Генерала Челнокова, ул, 42, Калининград, Калининградская обл., 236029', icon: 'map-marker-alt' }
 ]
 
 export const housesInformation = {

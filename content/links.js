@@ -16,7 +16,7 @@ export const links = [
     url: '/mortgage'
   },
   {
-    title: 'Наши объекты',
+    title: 'Проекты',
     url: '/objects'
   },
   {

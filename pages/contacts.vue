@@ -3,7 +3,7 @@
     .container
       section.section
         ContactsList.contacts-page__list
-        Map(:coords="[54.727453, 20.503642]")
+        Map(:coords="[54.743047, 20.485505]")
 </template>
 
 <script>

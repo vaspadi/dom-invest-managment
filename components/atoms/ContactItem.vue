@@ -25,7 +25,8 @@ export default {
 .contact-item {
   display: flex;
   align-items: center;
-  max-width: 400px;
+  min-width: 250px;
+  max-width: 450px;
 
   &__icon {
     font-size: 2.5em;
@@ -38,12 +39,12 @@ export default {
   }
 
   &__title {
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin-bottom: 10px;
   }
 
   &__description {
-    font-size: 0.9em;
+    font-size: 1.1em;
   }
 }
 </style>

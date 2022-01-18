@@ -29,6 +29,7 @@ export default {
   &__list {
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
 }
 </style>

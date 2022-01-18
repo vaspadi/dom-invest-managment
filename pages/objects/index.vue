@@ -14,7 +14,7 @@ export default {
   name: 'ObjectsPage',
 
   meta: {
-    bannerTitle: 'Наши объекты'
+    bannerTitle: 'Готовые проекты'
   },
 
   components: {

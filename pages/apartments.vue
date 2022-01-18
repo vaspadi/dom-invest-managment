@@ -19,7 +19,7 @@ export default {
   },
 
   meta: {
-    bannerTitle: 'Чистый воздух и тишина'
+    bannerTitle: 'Квартиры'
   },
 
   data () {
