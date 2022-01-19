@@ -14,12 +14,16 @@
 
       li.mortgage-bank-card__item
         p.mortgage-bank-card__item-title Кредит
-        p.mortgage-bank-card__value {{ monthSum }} <span>руб/мес</span>
+        p.mortgage-bank-card__value {{ smartRound(monthSum) }} <span>руб/мес</span>
 </template>
 
 <script>
+import formatter from '~/mixin/formatter'
+
 export default {
   name: 'MortgageBankCard',
+
+  mixins: [formatter],
 
   props: {
     img: {

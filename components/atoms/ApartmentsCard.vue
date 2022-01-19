@@ -6,16 +6,20 @@
       h3.apartments-card__title {{ floors[data.floorNum] || data.floorNum + ' комнатная' }} квартира {{data.apartmentArea}} м<sup>2</sup>
       p.apartments-card__subtitle Очередь {{ data.queueNum }}, Этаж {{ data.floorNum }}, комнаты {{ data.roomsNum }}
       p.apartments-card__tag Дата сдачи {{ data.deliveryDate || 'неопределена' }}
-      p.apartments-card__price {{ data.cost }}
-        icon.ruble(v-if="!isNaN(+data.cost) && data.cost" icon="ruble-sign")
-        span(v-if="!isNaN(+data.cost) && data.cost" icon="ruble-sign") или {{data.cost / +data.apartmentArea.replace(/,/, '.') }}
-          icon.ruble(v-if="!isNaN(+data.cost) && data.cost" icon="ruble-sign")
+      p.apartments-card__price {{ price() }}
+        icon.ruble(v-if="isCost" icon="ruble-sign")
+        span(v-if="isCost" icon="ruble-sign") или {{ areaPrice() }}
+          icon.ruble(v-if="isCost" icon="ruble-sign")
           |  за м<sup>2</sup>
 </template>
 
 <script>
+import formatter from '~/mixin/formatter'
+
 export default {
   name: 'ApartmentsCard',
+
+  mixins: [formatter],
 
   props: {
     data: {
@@ -26,6 +30,7 @@ export default {
 
   data () {
     return {
+      isCost: !isNaN(+this.data.cost) && +this.data.cost !== 0,
       floors: {
         1: 'Однокомнатная',
         2: 'Двухкомнатная',
@@ -33,6 +38,22 @@ export default {
         4: 'Четырехкомнатная',
         5: 'Пятикомнатная'
       }
+    }
+  },
+
+  methods: {
+    price () {
+      const price = +this.data.cost
+
+      if (isNaN(price)) { return 'Продано' }
+      if (price <= 0) { return '' }
+
+      return this.smartRound(price)
+    },
+    areaPrice () {
+      const area = +this.data.apartmentArea.replace(/,/, '.')
+
+      return this.smartRound(this.data.cost / area)
     }
   }
 }
