@@ -1,6 +1,6 @@
 <template lang="pug">
   div.apartments-page
-    section.section.container
+    section.section.container.apartments-page__content
       ApartmentsFilters
       ApartmentsList.apartments-page__list
 </template>
@@ -36,10 +36,14 @@ export default {
 
 <style lang="scss">
 .apartments-page {
-  margin-bottom: 200vh;
+  &__content {
+    display: flex;
+    align-items: start;
+  }
 
   &__list {
-    margin-left: 400px;
+    flex: 1;
+    padding-left: 60px;
   }
 }
 </style>

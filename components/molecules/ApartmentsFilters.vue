@@ -1,5 +1,5 @@
 <template lang="pug">
-  aside.apartments-filters(:class="{'apartments-filters_fixed': fixed}" )
+  aside.apartments-filters
     Select.apartments-filters__control(
       placeholder="Жилой комплекс"
       name="complex"
@@ -57,8 +57,6 @@ export default {
 
   data () {
     return {
-      fixed: false,
-      elTop: 0,
       complexes: ['Кислород'],
       numRooms: ['1', '2', '3+']
     }
@@ -70,28 +68,10 @@ export default {
     })
   },
 
-  mounted () {
-    if (process.browser) {
-      this.elTop = this.$el.offsetTop
-      this.doFixed()
-      window.addEventListener('scroll', this.doFixed)
-    }
-  },
-
-  destroyed () {
-    if (process.browser) {
-      window.removeEventListener('scroll', this.doFixed)
-    }
-  },
-
   methods: {
     ...mapActions('apartments', {
       changeFilter: 'changeFilter'
-    }),
-
-    doFixed () {
-      this.fixed = window.pageYOffset >= this.elTop - 150
-    }
+    })
   }
 }
 </script>
@@ -99,22 +79,11 @@ export default {
 <style lang="scss">
 @import "assets/scss/base/variables";
 .apartments-filters {
-  position: absolute;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   background-color: $--light-block-bg;
-  max-height: 75vh;
   padding: 40px;
-  overflow-y: scroll;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  &_fixed {
-    position: fixed;
-    top: 130px;
-  }
+  border-radius: $--bd-radius;
 
   &__control {
     margin-bottom: 25px;
