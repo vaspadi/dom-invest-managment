@@ -8,7 +8,7 @@
 <script>
 import ApartmentsFilters from '~/components/molecules/ApartmentsFilters'
 import ApartmentsList from '~/components/molecules/ApartmentsList'
-import { headTitles } from '~/content/data'
+import { apartments } from '~/content/meta'
 
 export default {
   name: 'ApartmentsPage',
@@ -22,15 +22,14 @@ export default {
     bannerTitle: 'Квартиры'
   },
 
-  data () {
+  head () {
     return {
-      headTitles
+      title: apartments.title,
+      meta: [
+        { hid: 'description', name: 'description', content: apartments.description }
+      ]
     }
-  },
-
-  head: () => ({
-    title: headTitles.apartments
-  })
+  }
 }
 </script>
 

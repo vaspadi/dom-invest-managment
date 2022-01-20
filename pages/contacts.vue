@@ -9,7 +9,7 @@
 <script>
 import ContactsList from '~/components/molecules/ContactsList'
 import Map from '~/components/atoms/Map'
-import { headTitles } from '~/content/data'
+import { contacts } from '~/content/meta'
 
 export default {
   name: 'ContactsPage',
@@ -23,15 +23,14 @@ export default {
     Map
   },
 
-  data () {
+  head () {
     return {
-      headTitles
+      title: contacts.title,
+      meta: [
+        { hid: 'description', name: 'description', content: contacts.description }
+      ]
     }
-  },
-
-  head: () => ({
-    title: headTitles.contacts
-  })
+  }
 }
 </script>
 

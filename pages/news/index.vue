@@ -8,7 +8,7 @@
 
 <script>
 import CardList from '~/components/molecules/CardList'
-import { headTitles } from '~/content/data'
+import { news } from '~/content/meta'
 
 export default {
   name: 'NewsPage',
@@ -24,7 +24,6 @@ export default {
   data () {
     return {
       showButton: true,
-      headTitles,
       news: []
     }
   },
@@ -37,9 +36,14 @@ export default {
       .fetch()
   },
 
-  head: () => ({
-    title: headTitles.news
-  }),
+  head () {
+    return {
+      title: news.title,
+      meta: [
+        { hid: 'description', name: 'description', content: news.description }
+      ]
+    }
+  },
 
   methods: {
     async showMoreNews () {

@@ -8,7 +8,7 @@
 
 <script>
 import CardList from '~/components/molecules/CardList'
-import { headTitles } from '~/content/data'
+import { projects } from '~/content/meta'
 
 export default {
   name: 'ProjectsPage',
@@ -24,7 +24,6 @@ export default {
   data () {
     return {
       showButton: true,
-      headTitles,
       projects: []
     }
   },
@@ -37,9 +36,14 @@ export default {
       .fetch()
   },
 
-  head: () => ({
-    title: headTitles.projects
-  }),
+  head () {
+    return {
+      title: projects.title,
+      meta: [
+        { hid: 'description', name: 'description', content: projects.description }
+      ]
+    }
+  },
 
   methods: {
     async showMoreProjects () {

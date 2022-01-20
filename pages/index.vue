@@ -17,6 +17,7 @@ import NewsSection from '~/components/molecules/NewsSection.vue'
 import ObjectsSection from '~/components/molecules/ObjectsSection'
 import SliderBlock from '~/components/molecules/SliderBlock'
 import { videoSlider, performanceSection, mortgageSection } from '~/content/data'
+import { home } from '~/content/meta'
 
 export default {
   name: 'IndexPage',
@@ -36,6 +37,15 @@ export default {
       videoSlider,
       performanceSection,
       mortgageSection
+    }
+  },
+
+  head () {
+    return {
+      title: home.title,
+      meta: [
+        { hid: 'description', name: 'description', content: home.description }
+      ]
     }
   }
 }

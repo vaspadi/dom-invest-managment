@@ -12,7 +12,8 @@
 <script>
 import ArticleSection from '~/components/atoms/ArticleSection'
 import PartnersSection from '~/components/atoms/PartnersSection'
-import { headTitles, aboutCompany, partners } from '~/content/data'
+import { aboutCompany, partners } from '~/content/data'
+import { about } from '~/content/meta'
 
 export default {
   name: 'AboutPage',
@@ -28,15 +29,19 @@ export default {
 
   data () {
     return {
-      headTitles,
       aboutCompany,
       partners
     }
   },
 
-  head: () => ({
-    title: headTitles.about
-  })
+  head () {
+    return {
+      title: about.title,
+      meta: [
+        { hid: 'description', name: 'description', content: about.description }
+      ]
+    }
+  }
 }
 </script>
 
