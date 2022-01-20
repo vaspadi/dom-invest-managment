@@ -59,33 +59,56 @@ export default {
   border-radius: $--bd-radius;
   padding: 20px 40px;
 
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+
   &__image-wrap {
     flex: 1;
     display: flex;
     align-items: center;
     margin-right: 20px;
+
+    @media screen and (max-width: 720px) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
   }
 
   &__image {
+    width: 100%;
     max-height: 30px;
+    object-fit: contain;
+
+    @media screen and (max-width: 720px) {
+      max-height: 60px;
+    }
   }
 
   &__list {
     flex: 2;
     display: flex;
     justify-content: space-around;
-    align-items: center;
   }
 
   &__item {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 100px;
     line-height: 1;
+    text-align: center;
 
-    &:last-child {
-      flex: 1.5
+    @media screen and (min-width: 721px) {
+      text-align: left;
+
+      &:last-child {
+        min-width: 160px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 30px;
     }
   }
 
@@ -95,9 +118,17 @@ export default {
   }
 
   &__value {
-    white-space: nowrap;
     font-size: 25px;
     font-weight: 700;
+
+    @media screen and (min-width: 721px) {
+      white-space: nowrap;
+    }
+
+    span {
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
   }
 
   &__icon {

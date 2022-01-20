@@ -26,9 +26,12 @@ export default {
   }
 
   &__text {
-    max-width: 300px;
     font-size: 20px;
     line-height: 1;
+
+    @media screen and (min-width: 1141px) {
+      max-width: 300px;
+    }
   }
 }
 </style>

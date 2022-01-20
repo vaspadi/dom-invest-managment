@@ -2,6 +2,10 @@
   position: relative;
   font-size: 16px;
 
+  @media screen and (max-width: 720px) {
+    font-size: 14px;
+  }
+
   &:hover {
     p {
     color: #000
@@ -14,9 +18,11 @@
     top: 0.5em;
     font-size: 1em;
     text-transform: lowercase;
-    white-space: nowrap;
     font-weight: 700;
-    color: rgba(0,0,0, 0.5)
+    color: rgba(0,0,0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   input[type="text"],

@@ -90,6 +90,8 @@ export default {
 .range-input {
 
   &__placeholder {
+    width: 100%;
+    padding-right: 40px;
     pointer-events: none;
   }
 

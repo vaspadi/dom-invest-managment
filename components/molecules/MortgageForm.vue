@@ -48,13 +48,36 @@ export default {
 @import "assets/scss/base/variables";
 
 .mortgage-form {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  min-width: 300px;
   background-color: $--light-block-bg;
   padding: 40px;
   border-radius: $--bd-radius;
 
+  @media screen and (max-width: 1140px) {
+    padding: 30px 20px 5px;
+  }
+
+  &__form {
+    width: 100%;
+
+    @media screen and (max-width: 1140px) and (min-width: 721px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__range {
     margin-bottom: 25px;
+
+    @media screen and (max-width: 1140px) and (min-width: 721px) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
   }
 
   &__button {
