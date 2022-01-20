@@ -7,9 +7,9 @@
       div.apartments-card__description
         p.apartments-card__subtitle Очередь {{ data.queueNum }}, Этаж {{ data.floorNum }}, комнаты {{ data.roomsNum }}
         p.apartments-card__tag Дата сдачи {{ data.deliveryDate || 'неопределена' }}
-      p.apartments-card__price {{ price() }}
+      p.apartments-card__price {{ price }}
         icon.ruble(v-if="isCost" icon="ruble-sign")
-        span(v-if="isCost" icon="ruble-sign") или {{ areaPrice() }}
+        span(v-if="isCost" icon="ruble-sign") или {{ areaPrice }}
           icon.ruble(v-if="isCost" icon="ruble-sign")
           |  за м<sup>2</sup>
 </template>
@@ -31,7 +31,6 @@ export default {
 
   data () {
     return {
-      isCost: !isNaN(+this.data.cost) && +this.data.cost !== 0,
       floors: {
         1: 'Однокомнатная',
         2: 'Двухкомнатная',
@@ -42,7 +41,7 @@ export default {
     }
   },
 
-  methods: {
+  computed: {
     price () {
       const price = +this.data.cost
 
@@ -51,6 +50,11 @@ export default {
 
       return this.smartRound(price)
     },
+
+    isCost () {
+      return !isNaN(+this.data.cost) && +this.data.cost !== 0
+    },
+
     areaPrice () {
       const area = +this.data.apartmentArea.replace(/,/, '.')
 
