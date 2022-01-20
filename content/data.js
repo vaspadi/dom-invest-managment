@@ -96,8 +96,8 @@ export const mortgageSection = {
 }
 
 export const contacts = [
-  { title: 'Телефон', description: '+7 4012 50 98 51', icon: 'phone' },
-  { title: 'Почта', description: 'info@dominvest39.ru', icon: 'envelope' },
+  { title: 'Телефон', phone: '+74012509851', description: '+7 4012 50 98 51', icon: 'phone' },
+  { title: 'Почта', email: 'info@dominvest39.ru', description: 'info@dominvest39.ru', icon: 'envelope' },
   { title: 'Адрес', description: 'ул. Генерала Челнокова, ул, 42, Калининград, Калининградская обл., 236029', icon: 'map-marker-alt' }
 ]
 
