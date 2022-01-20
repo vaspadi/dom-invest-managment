@@ -4,6 +4,12 @@
     ul.apartments-list__list
       li.apartments-list__item(v-for="(item, index) in apartments.slice(0, 10)" :key="item._id")
         ApartmentsCard(:data="item")
+    Pagination.apartments-list__pagination(
+      :page-count="20"
+      :click-handler="changePage"
+      :prev-text="'<'"
+      :next-text="'>'"
+      :container-class="'pagination'")
 </template>
 
 <script>
@@ -30,7 +36,11 @@ export default {
   methods: {
     ...mapActions('apartments', {
       getApartment: 'getApartments'
-    })
+    }),
+
+    changePage (int) {
+      console.log(int)
+    }
   }
 }
 </script>
@@ -38,6 +48,9 @@ export default {
 <style lang="scss">
 .apartments-list {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 
   &__lenght {
@@ -58,6 +71,7 @@ export default {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 100%;
 
     @media screen and (max-width: 720px) {
       flex-direction: row;
@@ -71,6 +85,10 @@ export default {
     @media screen and (max-width: 720px) {
       width: 100%;
     }
+  }
+
+  &__pagination {
+    margin-top: 30px;
   }
 }
 </style>

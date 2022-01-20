@@ -50,6 +50,10 @@ export default {
       src: '~/plugins/clickOutside',
       mode: 'client'
     },
+    {
+      src: '~/plugins/vuejsPagination.js',
+      mode: 'client'
+    },
     '~/http/api-client.js',
     '~/repositories/index.js'
   ],
