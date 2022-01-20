@@ -52,6 +52,7 @@ export default {
 .radio-buttons {
   display: flex;
   flex-direction: column;
+  height: 70px;
   font-size: 16px;
 
   &:hover .radio-buttons__placeholder {
@@ -68,6 +69,7 @@ export default {
 
   &__list {
     display: flex;
+    height: 100%;
   }
 
   &__label {
@@ -106,6 +108,9 @@ export default {
   }
 
   &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     text-align: center;

@@ -57,6 +57,9 @@ export default {
 
 .select {
   font-size: 16px;
+  height: 4.375em;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     .select__placeholder {
@@ -73,10 +76,13 @@ export default {
   }
 
   &__value {
+    display: flex;
+    align-items: center;
+    height: 100%;
     font-size: 1.2em;
     font-weight: 700;
     background-color: #fff;
-    padding: 0.5em 1em;
+    padding: 0 1em;
     border: 1px solid darken($--light-block-bg, 3%);
     border-radius: $--bd-radius;
     cursor: pointer;

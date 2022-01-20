@@ -37,6 +37,8 @@ export default {
 
 <style lang="scss">
 .from-to-input {
+  height: 4.375em;
+
   &__input {
     padding-left: 50px !important;
   }

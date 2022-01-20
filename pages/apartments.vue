@@ -39,11 +39,20 @@ export default {
   &__content {
     display: flex;
     align-items: start;
+
+    @media screen and (max-width: 1140px) {
+      flex-direction: column;
+    }
   }
 
   &__list {
     flex: 1;
     padding-left: 60px;
+
+    @media screen and (max-width: 1140px) {
+      padding-left: 0;
+      margin-top: 70px;
+    }
   }
 }
 </style>

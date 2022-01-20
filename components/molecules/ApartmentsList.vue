@@ -2,7 +2,7 @@
   .apartments-list
     .apartments-list__lenght Найдено: {{ apartments.length }}
     ul.apartments-list__list
-      li.apartments-list__item(v-for="(item, index) in apartments" :key="index")
+      li.apartments-list__item(v-for="(item, index) in apartments.slice(0, 10)" :key="item._id")
         ApartmentsCard(:data="item")
 </template>
 
@@ -38,6 +38,7 @@ export default {
 <style lang="scss">
 .apartments-list {
   position: relative;
+  width: 100%;
 
   &__lenght {
     position: absolute;
@@ -53,8 +54,23 @@ export default {
     }
   }
 
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 720px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
   &__item {
     margin-bottom: 20px;
+
+    @media screen and (max-width: 720px) {
+      width: 100%;
+    }
   }
 }
 </style>

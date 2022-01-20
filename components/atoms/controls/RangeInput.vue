@@ -88,6 +88,7 @@ export default {
 @import "assets/scss/base/variables";
 
 .range-input {
+  height: 4.375em;
 
   &__placeholder {
     width: 100%;
