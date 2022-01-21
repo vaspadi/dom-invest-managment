@@ -27,7 +27,7 @@ stages:
         tags: |
           latest
           $(tag)
-        arguments: --build-arg VUE_APP_PORT=80
+        arguments: --build-arg VUE_APP_PORT=80 --build-arg VUE_APP_BASE_API=https://api.o2-club.ru/api
 
     - task: Docker@2
       displayName: Push
