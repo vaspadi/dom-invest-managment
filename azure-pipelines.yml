@@ -1,0 +1,50 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+
+stages:
+- stage: BuildAndDeploy
+  jobs:
+  - job: BuildAndDeploy
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      displayName: Build
+      inputs:
+        command: build
+        containerRegistry: 'registry'
+        repository: main
+        tags: |
+          latest
+          $(tag)
+        arguments: --build-arg VUE_APP_PORT=80
+
+    - task: Docker@2
+      displayName: Push
+      inputs:
+        command: push
+        containerRegistry: 'registry'
+        repository: main
+        tags: |
+          latest
+          $(tag)
+
+    - task: SSH@0
+      inputs:
+        sshEndpoint: 'ssh'
+        runOptions: 'inline'
+        inline: 'cd ~/environment &&
+                docker-compose pull main 2>> docker-compose.log &&
+                docker-compose up -d main 2>> docker-compose.log &&
+                cat docker-compose.log'
+        readyTimeout: '20000'
