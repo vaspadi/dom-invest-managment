@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   env: {
-    apiUrl: process.env.API_URL || 'http://localhost:5000/api'
+    apiUrl: process.env.VUE_APP_BASE_API || 'http://localhost:5000/api'
   },
 
   head: {
