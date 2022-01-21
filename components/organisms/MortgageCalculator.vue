@@ -1,6 +1,6 @@
 <template lang="pug">
   .mortgage-calculator
-    MortgageForm
+    MortgageForm.mortgage-calculator__form
     .mortgage-calculator__column
       MortgageBankCard.mortgage-calculator__card(
         img="banks/sberbank.svg"
@@ -59,17 +59,30 @@ export default {
 .mortgage-calculator {
   display: flex;
   justify-content: space-between;
-  margin: 0 -50px;
 
-  & > * {
+  @media screen and (max-width: 1140px) {
+    flex-direction: column;
+
+    .mortgage-calculator__form {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
     flex: 1;
-    margin: 0 50px;
+    margin-right: 6.5vw;
   }
 
   &__column {
     flex: 2;
     display: flex;
     flex-direction: column;
+
+    // @media screen and (max-width: 1140px) {
+    //   flex-flow: row wrap;
+    //   justify-content: space-between;
+    // }
   }
 
   &__card {
@@ -78,10 +91,20 @@ export default {
     &:last-child {
       margin-bottom: auto;
     }
+
+    // @media screen and (max-width: 1140px) {
+    //   width: 32%;
+    //   margin-bottom: 0;
+    // }
   }
 
   &__notification {
     margin-top: auto;
+
+    @media screen and (max-width: 1140px) {
+      width: 100%;
+      margin-top: 20px;
+    }
   }
 }
 </style>

@@ -6,16 +6,26 @@
 
 <script>
 import MortgageCalculator from '~/components/organisms/MortgageCalculator'
+import { mortgage } from '~/content/meta'
 
 export default {
   name: 'Mortgage',
 
   meta: {
-    bannerTitle: 'Ипотека'
+    bannerTitle: 'Ипотечный калькулятор'
   },
 
   components: {
     MortgageCalculator
+  },
+
+  head () {
+    return {
+      title: mortgage.title,
+      meta: [
+        { hid: 'description', name: 'description', content: mortgage.description }
+      ]
+    }
   }
 }
 </script>

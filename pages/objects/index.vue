@@ -8,13 +8,13 @@
 
 <script>
 import CardList from '~/components/molecules/CardList'
-import { headTitles } from '~/content/data'
+import { objects } from '~/content/meta'
 
 export default {
   name: 'ObjectsPage',
 
   meta: {
-    bannerTitle: 'Наши объекты'
+    bannerTitle: 'Готовые проекты'
   },
 
   components: {
@@ -24,7 +24,6 @@ export default {
   data () {
     return {
       showButton: true,
-      headTitles,
       objects: []
     }
   },
@@ -37,9 +36,14 @@ export default {
       .fetch()
   },
 
-  head: () => ({
-    title: headTitles.objects
-  }),
+  head () {
+    return {
+      title: objects.title,
+      meta: [
+        { hid: 'description', name: 'description', content: objects.description }
+      ]
+    }
+  },
 
   methods: {
     async showMoreObjects () {

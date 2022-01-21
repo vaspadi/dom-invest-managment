@@ -28,7 +28,23 @@ export default {
 .contacts-list {
   &__list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 540px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    margin: 0 20px 30px;
+
+    @media screen and (max-width: 540px) {
+      // font-size: 14px;
+      margin: 0 0 30px;
+    }
   }
 }
 </style>

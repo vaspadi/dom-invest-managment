@@ -3,13 +3,13 @@
     .container
       section.section
         ContactsList.contacts-page__list
-        Map(:coords="[54.727453, 20.503642]")
+        Map(:coords="[54.743047, 20.485505]")
 </template>
 
 <script>
 import ContactsList from '~/components/molecules/ContactsList'
 import Map from '~/components/atoms/Map'
-import { headTitles } from '~/content/data'
+import { contacts } from '~/content/meta'
 
 export default {
   name: 'ContactsPage',
@@ -23,15 +23,14 @@ export default {
     Map
   },
 
-  data () {
+  head () {
     return {
-      headTitles
+      title: contacts.title,
+      meta: [
+        { hid: 'description', name: 'description', content: contacts.description }
+      ]
     }
-  },
-
-  head: () => ({
-    title: headTitles.contacts
-  })
+  }
 }
 </script>
 

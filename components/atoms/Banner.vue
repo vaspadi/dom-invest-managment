@@ -67,6 +67,8 @@ export default {
   }
 
   &__title {
+    text-transform: initial;
+
     @media screen and (max-width: 720px) {
       text-align: center;
     }

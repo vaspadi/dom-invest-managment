@@ -39,6 +39,7 @@ export default {
 <style lang="scss">
 .double-from-to-input {
   display: flex;
+  width: 100%;
 
   &:hover {
     .from-to-input__placeholder {
@@ -47,6 +48,8 @@ export default {
   }
 
   &__input {
+    width: 50%;
+
     &:first-child {
       z-index: 2;
 

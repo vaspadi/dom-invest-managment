@@ -20,7 +20,8 @@
     "core-js": "^3.15.1",
     "hooper": "^0.3.4",
     "nuxt": "^2.15.7",
-    "vue-yandex-maps": "^0.10.12"
+    "vue-yandex-maps": "^0.10.12",
+    "vuejs-paginate": "^2.1.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

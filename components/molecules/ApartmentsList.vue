@@ -1,9 +1,21 @@
 <template lang="pug">
   .apartments-list
     .apartments-list__lenght Найдено: {{ apartments.length }}
+
     ul.apartments-list__list
-      li.apartments-list__item(v-for="(item, index) in apartments" :key="index")
+      li.apartments-list__item(v-for="(item, index) in currentApartments" :key="index")
         ApartmentsCard(:data="item")
+
+    Pagination.apartments-list__pagination(
+      v-show="apartments.length > 10"
+      :key="pagesLength"
+      :page-count="pagesLength"
+      :prev-text="'<'"
+      :click-handler="setPage"
+      :next-text="'>'"
+      :container-class="'pagination'")
+
+    div.apartments-list__no-data(v-show="!apartments.length") Нет данных
 </template>
 
 <script>
@@ -17,10 +29,30 @@ export default {
     ApartmentsCard
   },
 
+  data () {
+    return {
+      currentPage: 0
+    }
+  },
+
   computed: {
     ...mapState('apartments', {
       apartments: 'apartments'
-    })
+    }),
+
+    currentApartments () {
+      return this.apartments.slice(this.currentPage * 10, this.currentPage * 10 + 10)
+    },
+
+    pagesLength () {
+      return Math.ceil(this.apartments.length / 10)
+    }
+  },
+
+  watch: {
+    apartments (newVal, oldVal) {
+      if (newVal.length !== oldVal.length) { this.currentPage = 0 }
+    }
   },
 
   mounted () {
@@ -30,7 +62,11 @@ export default {
   methods: {
     ...mapActions('apartments', {
       getApartment: 'getApartments'
-    })
+    }),
+
+    setPage (int) {
+      this.currentPage = int - 1
+    }
   }
 }
 </script>
@@ -38,6 +74,10 @@ export default {
 <style lang="scss">
 .apartments-list {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 
   &__lenght {
     position: absolute;
@@ -53,8 +93,32 @@ export default {
     }
   }
 
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @media screen and (max-width: 720px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
   &__item {
     margin-bottom: 20px;
+
+    @media screen and (max-width: 720px) {
+      width: 100%;
+    }
+  }
+
+  &__pagination {
+    margin-top: 30px;
+  }
+
+  &__no-data {
+    padding: 20px 0;
   }
 }
 </style>

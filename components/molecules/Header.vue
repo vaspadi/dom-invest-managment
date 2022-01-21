@@ -112,10 +112,6 @@ export default {
     @media screen and (max-width: 1140px) {
       display: none !important;
     }
-
-    img {
-      max-height: 30px;
-    }
   }
 
   &__nav {

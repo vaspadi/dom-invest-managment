@@ -1,6 +1,6 @@
 <template lang="pug">
   div.apartments-page
-    section.section.container
+    section.section.container.apartments-page__content
       ApartmentsFilters
       ApartmentsList.apartments-page__list
 </template>
@@ -8,7 +8,7 @@
 <script>
 import ApartmentsFilters from '~/components/molecules/ApartmentsFilters'
 import ApartmentsList from '~/components/molecules/ApartmentsList'
-import { headTitles } from '~/content/data'
+import { apartments } from '~/content/meta'
 
 export default {
   name: 'ApartmentsPage',
@@ -19,27 +19,39 @@ export default {
   },
 
   meta: {
-    bannerTitle: 'Чистый воздух и тишина'
+    bannerTitle: 'Квартиры'
   },
 
-  data () {
+  head () {
     return {
-      headTitles
+      title: apartments.title,
+      meta: [
+        { hid: 'description', name: 'description', content: apartments.description }
+      ]
     }
-  },
-
-  head: () => ({
-    title: headTitles.apartments
-  })
+  }
 }
 </script>
 
 <style lang="scss">
 .apartments-page {
-  margin-bottom: 200vh;
+  &__content {
+    display: flex;
+    align-items: start;
+
+    @media screen and (max-width: 1140px) {
+      flex-direction: column;
+    }
+  }
 
   &__list {
-    margin-left: 400px;
+    flex: 1;
+    padding-left: 60px;
+
+    @media screen and (max-width: 1140px) {
+      padding-left: 0;
+      margin-top: 70px;
+    }
   }
 }
 </style>

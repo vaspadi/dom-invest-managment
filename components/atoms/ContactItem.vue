@@ -5,7 +5,11 @@
     .contact-item__content
       h3.contact-item__title {{ data.title }}
 
-      p.contact-item__description {{ data.description }}
+      a.contact-item__email.contact-item__link(v-if="data.email" :href="`mailto:${data.email}`") {{ data.description }}
+
+      a.contact-item__phone.contact-item__link(v-else-if="data.phone" :href="`tel:${data.phone}`") {{ data.description }}
+
+      p.contact-item__description(v-else) {{ data.description }}
 </template>
 
 <script>
@@ -25,7 +29,8 @@ export default {
 .contact-item {
   display: flex;
   align-items: center;
-  max-width: 400px;
+  // min-width: 250px;
+  max-width: 450px;
 
   &__icon {
     font-size: 2.5em;
@@ -38,12 +43,17 @@ export default {
   }
 
   &__title {
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin-bottom: 10px;
   }
 
+  &__link {
+    font-size: 1.1em;
+    color: black;
+  }
+
   &__description {
-    font-size: 0.9em;
+    font-size: 1.1em;
   }
 }
 </style>
