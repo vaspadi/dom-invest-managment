@@ -15,7 +15,7 @@ export const phone = {
 }
 
 export const mainSlider = {
-  title: 'Дома малой этажности, эстетичный внешний вид и стильный дизайн',
+  title: 'Мы строим для<br> комфортной жизни',
   images: [
     'main-slider/img1.jpg',
     'main-slider/img2.jpg',

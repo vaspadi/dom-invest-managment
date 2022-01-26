@@ -8,7 +8,7 @@
     SliderControls.container(@prev="slidePrev" @next="slideNext")
 
     .main-slider__content
-      h1.main-slider__title.title {{ mainSlider.title }}
+      h1.main-slider__title.title(v-html="mainSlider.title")
 </template>
 
 <script>
