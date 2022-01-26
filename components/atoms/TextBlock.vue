@@ -41,9 +41,5 @@ export default {
     text-transform: lowercase;
     margin-bottom: 20px;
   }
-
-  &__list {
-    text-transform: lowercase;
-  }
 }
 </style>

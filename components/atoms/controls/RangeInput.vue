@@ -1,10 +1,11 @@
 <template lang="pug">
-  .range-input.input(:class="{ 'range_active': !value }" @input="$emit('input', curValue)")
+  .range-input.input(:class="{ 'range_active': !disabled }" @input="$emit('input', curValue)")
     label.range-input__label
-      input.range-input__input(v-model="curValue" type="text" :disabled="value" @input="validateCurValue")
+      input.range-input__input(v-model="curValue" type="text" :disabled="disabled" @input="validateCurValue")
       p.range-input__placeholder(v-if="placeholder") {{ placeholder }}
       icon.range-input__icon.input__icon(v-if="icon" icon="ruble-sign")
       div.range-input__square.input__icon(v-if="square") м<sup>2</sup>
+
     input.range-input__range(
       type="range"
       tabindex="-1"
@@ -13,7 +14,7 @@
       :min="min"
       :max="max"
       multiple
-      :disabled="value"
+      :disabled="disabled"
       @input="validateCurValue")
 </template>
 
@@ -42,9 +43,9 @@ export default {
       default: null
     },
 
-    default: {
-      type: Number,
-      default: 0
+    disabled: {
+      type: Boolean,
+      default: false
     },
 
     min: {
@@ -65,15 +66,22 @@ export default {
 
   data () {
     return {
-      curValue: this.value || this.default
+      curValue: this.value
+    }
+  },
+
+  watch: {
+    value () {
+      this.curValue = this.value
     }
   },
 
   methods: {
     validateCurValue () {
-      this.curValue = this.curValue.replace(/^0+|[^0-9]/g, '')
+      const curValue = Number.isInteger(this.curValue)
+        ? this.curValue
+        : this.curValue.replace(/^0+|[^0-9]/g, '')
 
-      const curValue = this.curValue
       const min = this.min
       const max = this.max
 

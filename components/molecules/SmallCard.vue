@@ -71,7 +71,6 @@ export default {
     position: relative;
     font-size: 40px;
     color: #fff;
-    text-transform: lowercase;
     z-index: 2;
     padding: 20px;
 

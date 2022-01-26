@@ -3,7 +3,7 @@ const CHANGE_BANNER_TITLE = 'CHANGE_BANNER_TITLE'
 
 export const state = () => ({
   title: '',
-  image: 'main-slider/img7.jpg'
+  image: 'main-slider/4.jpg'
 })
 
 export const mutations = {

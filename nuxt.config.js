@@ -76,8 +76,8 @@ export default {
         // 576,
         768,
         // 992,
-        1200
-        // 1590
+        1200,
+        1920
       ],
       placeholder: true,
       placeholderSize: 20

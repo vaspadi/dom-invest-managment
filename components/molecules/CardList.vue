@@ -5,16 +5,9 @@
 </template>
 
 <script>
-import Card from '~/components/molecules/Card'
-import SmallCard from '~/components/molecules/SmallCard'
 
 export default {
   name: 'CardsSection',
-
-  components: {
-    Card,
-    SmallCard
-  },
 
   props: {
     data: {
@@ -31,9 +24,9 @@ export default {
   computed: {
     component () {
       if (this.small) {
-        return SmallCard
+        return () => import('~/components/molecules/SmallCard')
       } else {
-        return Card
+        return () => import('~/components/molecules/Card')
       }
     }
   }

@@ -103,7 +103,7 @@ export default {
       text-align: left;
 
       &:last-child {
-        min-width: 160px;
+        min-width: 200px;
       }
     }
 

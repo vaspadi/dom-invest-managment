@@ -17,6 +17,14 @@ export default {
     CardList,
     SectionHeader
   },
+
+  props: {
+    limit: {
+      type: Number,
+      default: 6
+    }
+  },
+
   data () {
     return {
       objects: [],
@@ -25,7 +33,10 @@ export default {
   },
 
   async fetch () {
-    this.objects = await this.$content('news', { deep: true }).limit(6).fetch()
+    this.objects = await this.$content('news', { deep: true })
+      .sortBy('index')
+      .limit(this.limit)
+      .fetch()
   }
 }
 </script>
