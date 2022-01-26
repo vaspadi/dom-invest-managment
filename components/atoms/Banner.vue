@@ -24,7 +24,7 @@ export default {
 
     img: {
       type: String,
-      default: 'main-slider/img7.jpg'
+      default: 'main-slider/4.jpg'
     }
   }
 }

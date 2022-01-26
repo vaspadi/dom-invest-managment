@@ -17,13 +17,10 @@ export const phone = {
 export const mainSlider = {
   title: 'Мы строим для<br> комфортной жизни',
   images: [
-    'main-slider/img1.jpg',
-    'main-slider/img2.jpg',
-    'main-slider/img3.jpg',
-    'main-slider/img4.jpg',
-    'main-slider/img5.jpg',
-    'main-slider/img6.jpg',
-    'main-slider/img7.jpg'
+    'main-slider/2.jpg',
+    'main-slider/1.png',
+    'main-slider/3.jpg',
+    'main-slider/4.jpg'
   ]
 }
 
@@ -39,7 +36,7 @@ export const performanceSection = {
     ]
   },
 
-  img: 'main-slider/img7.jpg',
+  img: 'main-slider/4.jpg',
 
   header: {
     title: 'Квартира специально для вас',
@@ -83,7 +80,7 @@ export const mortgageSection = {
     ]
   },
 
-  img: 'main-slider/img6.jpg',
+  img: 'main-slider/4.jpg',
 
   header: {
     title: 'Ипотечный калькулятор',
@@ -115,7 +112,7 @@ export const housesInformation = {
     ]
   },
 
-  img: 'main-slider/img7.jpg'
+  img: 'main-slider/4.jpg'
 }
 
 export const aboutCompany = {
