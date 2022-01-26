@@ -1,8 +1,9 @@
 ---
 img: main-slider/1.png
-title: The Mission.
+title: ЖК o2
 description: Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.
 tags: ['Новости', 'Скрытые новости']
+index: 0
 ---
 
 Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.

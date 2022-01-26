@@ -2,7 +2,7 @@
   div.index-page
     MainSlider
     //- InformationSection(:data="performanceSection")
-    ObjectsSection
+    ObjectsSection(:limit="3")
     NewsSection.index-page__news
     section.section
       .container

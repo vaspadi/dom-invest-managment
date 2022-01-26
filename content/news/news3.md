@@ -1,8 +1,9 @@
 ---
 img: main-slider/3.jpg
-title: The Mission.
+title: Дом на Стекольной
 description: Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.
 tags: ['Новости', 'Скрытые новости']
+index: 2
 ---
 
 Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.

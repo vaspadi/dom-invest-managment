@@ -1,8 +1,9 @@
 ---
 img: main-slider/2.jpg
-title: The Mission.
+title: ЖК Малиновка
 description: Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Blandit tellus quam sodales elit etiam. Blandit tellus quam sodales elit etiam.
 tags: ['Природа','Жуки','Животныей']
+index: 1
 ---
 
 Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.

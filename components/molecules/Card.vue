@@ -83,7 +83,6 @@ export default {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 15px;
-    text-transform: lowercase;
 
     @media screen and (max-width: 540px) {
       font-size: 25px;

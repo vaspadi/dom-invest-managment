@@ -3,6 +3,7 @@ img: main-slider/4.jpg
 title: The Mission.
 description: Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Blandit tellus quam sodales elit etiam. Blandit tellus quam sodales elit etiam.
 tags: ['Природа','Жуки','Животныей']
+index: 5
 ---
 
 Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.

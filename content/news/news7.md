@@ -3,6 +3,7 @@ img: main-slider/4.jpg
 title: The Mission.
 description: Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.
 tags: ['Новости', 'Скрытые новости']
+index: 6
 ---
 
 Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.
