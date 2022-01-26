@@ -1,16 +1,24 @@
 <template lang="pug">
   .mortgage-form
     form.mortgage-form__form
-      RangeInput.mortgage-form__range(placeholder="Стоимость недвижемости" :value="mortgage" icon="ruble-sign")
+      RangeInput.mortgage-form__range(
+        placeholder="Стоимость недвижемости"
+        :value="mortgage"
+        :min="3000000"
+        :max="500000000"
+        icon="ruble-sign"
+        @input="changeMortgage")
+
       RangeInput.mortgage-form__range(
         placeholder="Первоначальный взнос"
-        :default="mortgage * 0.1"
+        :value="payment"
         :max="mortgage * 0.9"
         @input="changePayment($event)"
         icon="ruble-sign")
+
       RangeInput.mortgage-form__range(
         placeholder="Срок"
-        :default="period"
+        :value="period"
         :min="5"
         :max="30"
         :step="5"
@@ -31,6 +39,7 @@ export default {
   computed: {
     ...mapState('mortgage', {
       mortgage: 'mortgage',
+      payment: 'payment',
       period: 'period'
     })
   },
@@ -38,7 +47,8 @@ export default {
   methods: {
     ...mapActions('mortgage', {
       changePayment: 'changePayment',
-      changePeriod: 'changePeriod'
+      changePeriod: 'changePeriod',
+      changeMortgage: 'changeMortgage'
     })
   }
 }
