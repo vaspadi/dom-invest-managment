@@ -19,7 +19,8 @@ export default {
   name: 'AboutPage',
 
   meta: {
-    bannerTitle: 'Строим для комфортной жизни'
+    bannerTitle: 'Строим для комфортной жизни',
+    bannerBg: 'about-company-bg.jpg'
   },
 
   components: {
