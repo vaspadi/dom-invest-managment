@@ -33,7 +33,7 @@ export default {
   },
 
   async fetch () {
-    this.objects = await this.$content('news', { deep: true })
+    this.objects = await this.$content('objects', { deep: true })
       .sortBy('index')
       .limit(this.limit)
       .fetch()

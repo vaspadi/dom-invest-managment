@@ -1,6 +1,18 @@
 <template lang="pug">
   .small-card
-    NuxtLink.small-card__link(:to="data.dir + '/' + data.slug")
+    NuxtLink.small-card__link(
+      v-if="!data.link"
+      :to="data.dir + '/' + data.slug")
+
+      ResponsibleImage.small-card__image(:img="data.img")
+      h3.small-card__title {{ data.title }}
+
+    a.small-card__link(
+      v-else
+      :target="data.target"
+      @click="handleClick"
+      :href="data.link")
+
       ResponsibleImage.small-card__image(:img="data.img")
       h3.small-card__title {{ data.title }}
 </template>
@@ -13,6 +25,13 @@ export default {
     data: {
       type: Object,
       required: true
+    }
+  },
+
+  // TODO: Избавиться от этого метода
+  methods: {
+    handleClick (event) {
+      if (!this.data.target) { event.preventDefault() }
     }
   }
 }
@@ -51,6 +70,10 @@ export default {
       .small-card__image img {
         transform: scale(1.1);
       }
+    }
+
+    &_disabled {
+      pointer-events: none;
     }
   }
 
