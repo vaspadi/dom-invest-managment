@@ -13,7 +13,7 @@
 
 <script>
 import { Hooper, Slide, Pagination } from 'hooper'
-import ResponsibleImage from '../global/ResponsibleImage.vue'
+import ResponsibleImage from '~/components/global/ResponsibleImage.vue'
 import SliderControls from '~/components/atoms/controls/SliderControls'
 import { mainSlider } from '~/content/data'
 

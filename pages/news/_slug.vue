@@ -1,27 +1,22 @@
 <template lang="pug">
-  .article-page
-    Banner.article-page__banner(:title="page.title")
-
-    .container.article-page__container
-      NuxtContent.article-page__nuxt-content(:document="page")
-      PrevNext.article-page__prev-next(:prev="prev" :next="next")
+  ArticlePage(:article="article" :prev="prev" :next="next")
 </template>
 
 <script>
-import Banner from '~/components/atoms/Banner'
-import PrevNext from '~/components/atoms/controls/PrevNext'
+const ArticlePage = () => import('~/components/molecules/ArticlePage')
 
 export default {
+  name: 'NewsSlug',
+
   components: {
-    Banner,
-    PrevNext
+    ArticlePage
   },
 
   layout: 'no-banner',
 
   async asyncData ({ $content, params, error }) {
     const slug = params.slug || 'index'
-    const page = await $content(`news/${slug}`)
+    const article = await $content(`news/${slug}`)
       .sortBy('createdAt', 'asc')
       .fetch()
       .catch(() => {
@@ -35,38 +30,19 @@ export default {
       .fetch()
 
     return {
-      page,
+      article,
       prev,
       next
+    }
+  },
+
+  head () {
+    return {
+      title: this.article.metaTitle || '',
+      meta: [
+        { hid: 'description', name: 'description', content: this.article.metaDescription || this.article.description || '' }
+      ]
     }
   }
 }
 </script>
-
-<style lang="scss">
-
-.article-page {
-  font-size: 20px;
-
-  &__banner .banner__content {
-    max-width: 960px;
-  }
-
-  &__container {
-    max-width: 960px;
-    padding: 80px 20px 100px;
-  }
-
-  &__nuxt-content {
-    .responsible-image,
-    .video {
-      display: inline-block;
-      margin: 20px 0;
-    }
-  }
-
-  &__prev-next {
-    margin-top: 60px;
-  }
-}
-</style>
