@@ -22,6 +22,11 @@ export default {
     limit: {
       type: Number,
       default: 6
+    },
+
+    indexPage: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -33,9 +38,12 @@ export default {
   },
 
   async fetch () {
+    // indexPage влияет на отображение объектов на главной странице
     this.objects = await this.$content('objects', { deep: true })
-      .sortBy('index')
-      .limit(this.limit)
+      .where(this.indexPage ? { indexPage: true, project: false } : null)
+      .limit(this.limit)``
+      .without('body')
+      .sortBy('createdAt')
       .fetch()
   }
 }

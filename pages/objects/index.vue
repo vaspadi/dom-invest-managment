@@ -29,7 +29,8 @@ export default {
   },
 
   async fetch () {
-    this.objects = await this.$content('news', { deep: true })
+    this.objects = await this.$content('objects', { deep: true })
+      .where({ project: false })
       .limit(6)
       .sortBy('createdAt', 'asc')
       .without(['body'])

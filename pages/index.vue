@@ -2,8 +2,8 @@
   div.index-page
     MainSlider
     //- InformationSection(:data="performanceSection")
-    ObjectsSection(:limit="3")
-    NewsSection.index-page__news
+    ObjectsSection(:limit="3" index-page)
+    NewsSection.index-page__news(index-page)
     section.section
       .container
         SliderBlock(:data="videoSlider")

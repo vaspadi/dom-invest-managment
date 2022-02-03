@@ -26,6 +26,13 @@ export default {
     SectionHeader
   },
 
+  props: {
+    indexPage: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   data () {
     return {
       newsSection,
@@ -34,7 +41,9 @@ export default {
   },
 
   async fetch () {
+    // indexPage влияет на отображение объектов на главной странице
     this.news = await this.$content('news', { deep: true })
+      .where(this.indexPage ? { indexPage: true } : null)
       .limit(3)
       .sortBy('createdAt', 'asc')
       .fetch()
