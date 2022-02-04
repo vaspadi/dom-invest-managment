@@ -3,7 +3,7 @@
     section.section
       .container.objects-page__content
         CardList(:data="objects" small)
-        button.button(v-if="showButton" @click="showMoreObjects") Больше объектов
+        button.button(v-if="showButton && objects.length >= limit" @click="showMoreObjects") Больше объектов
 </template>
 
 <script>
@@ -24,6 +24,7 @@ export default {
   data () {
     return {
       showButton: true,
+      limit: 6,
       objects: []
     }
   },
@@ -31,7 +32,7 @@ export default {
   async fetch () {
     this.objects = await this.$content('objects', { deep: true })
       .where({ project: false })
-      .limit(6)
+      .limit(this.limit)
       .sortBy('createdAt', 'asc')
       .without(['body'])
       .fetch()

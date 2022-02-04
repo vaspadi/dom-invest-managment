@@ -1,7 +1,10 @@
 <template lang="pug">
-  ul.cards-section__list
-    li.cards-section__item(v-for="(item, index) in data" :key="index")
-      compoent(:is="component" :data="item")
+  div.cards-section
+    ul.cards-section__list(v-if="data.length")
+      li.cards-section__item(v-for="(item, index) in data" :key="index")
+        compoent(:is="component" :data="item")
+
+    div.no-data(v-else) Нет данных
 </template>
 
 <script>
@@ -35,10 +38,11 @@ export default {
 
 <style lang="scss">
 .cards-section {
+  width: 100%;
+
   &__list {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
   }
 
   &__item {

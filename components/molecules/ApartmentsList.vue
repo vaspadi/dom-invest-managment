@@ -15,7 +15,7 @@
       :next-text="'>'"
       :container-class="'pagination'")
 
-    div.apartments-list__no-data(v-show="!apartments.length") Нет данных
+    div.no-data(v-show="!apartments.length") Нет данных
 </template>
 
 <script>
@@ -115,10 +115,6 @@ export default {
 
   &__pagination {
     margin-top: 30px;
-  }
-
-  &__no-data {
-    padding: 20px 0;
   }
 }
 </style>

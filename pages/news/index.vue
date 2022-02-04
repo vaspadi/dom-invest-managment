@@ -3,7 +3,7 @@
     section.section
       .container.news-page__content
         CardList(:data="news")
-        button.button(v-if="showButton" @click="showMoreNews") Больше новостей
+        button.button(v-if="showButton && news.length >= limit" @click="showMoreNews") Больше новостей
 </template>
 
 <script>
@@ -24,13 +24,14 @@ export default {
   data () {
     return {
       showButton: true,
+      limit: 6,
       news: []
     }
   },
 
   async fetch () {
     this.news = await this.$content('news', { deep: true })
-      .limit(6)
+      .limit(this.limit)
       .sortBy('createdAt', 'asc')
       .without(['body'])
       .fetch()
