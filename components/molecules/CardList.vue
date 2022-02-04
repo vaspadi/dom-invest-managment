@@ -37,8 +37,8 @@ export default {
 .cards-section {
   &__list {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   &__item {

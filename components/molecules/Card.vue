@@ -35,6 +35,7 @@ export default {
 @import "assets/scss/base/variables";
 
 .card {
+  width: 100%;
   border-radius: $--bd-radius;
   box-shadow: 0 0 10px rgb(0 0 0 / 9%);
   overflow: hidden;
