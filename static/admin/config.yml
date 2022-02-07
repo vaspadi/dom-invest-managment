@@ -1,6 +1,5 @@
 backend:
-  name: proxy
-  proxy_url: http://172.22.0.1:3000/
+  name: github
   repo: vaspadi/dom-invest-managment
 
 media_folder: assets/img/uploads
