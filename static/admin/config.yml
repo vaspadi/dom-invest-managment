@@ -1,0 +1,60 @@
+backend:
+  name: github
+  repo: vaspadi/dom-invest-test-managment
+
+media_folder: assets/img/uploads
+public_folder: uploads
+
+collections:
+  - name: news
+    label: Новости
+    folder: content/news
+    format: frontmatter
+    create: true
+    slug: '{{fields.slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: Заголовок страницы, name: metaTitle, widget: string }
+      - { label: Название файла, name: slug, widget: string, hint: Переименовать файл нельзя }
+      - { label: Картинка, name: img, widget: image, media_folder: /assets/img/news }
+      - { label: Заголовок новости, name: title, widget: string }
+      - { label: Описание, name: description, widget: string }
+      - { label: Описание metatag, name: metaDescription, widget: string, required: false }
+      - { label: Время прочтения, name: time, widget: string, required: false, hint: 3 мин }
+      - { label: Добавить на главную страницу, name: indexPage, widget: boolean, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: objects
+    label: Объекты
+    folder: content/objects
+    format: frontmatter
+    create: true
+    slug: '{{fields.slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: Заголовок страницы, name: metaTitle, widget: string }
+      - { label: Название файла, name: slug, widget: string, hint: Переименовать файл нельзя }
+      - { label: Картинка, name: img, widget: image, media_folder: /assets/img/objects }
+      - { label: Заголовок объекта, name: title, widget: string }
+      - { label: Описание, name: description, widget: string }
+      - { label: Описание metatag, name: metaDescription, widget: string, required: false }
+      - { label: Время прочтения, name: time, widget: string, required: false, hint: 3 мин }
+      - { label: Добавить на главную страницу, name: indexPage, widget: boolean, required: false }
+      - { label: Переместить в Новостройки, name: project, widget: boolean, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: seo
+    label: Seo
+    files:
+      - label: sitemap
+        name: sitemap
+        file: content/seo.json
+        editor:
+          preview: false
+        fields:
+        - label: sitemap.xml
+          name: file
+          widget: file
+          media_folder: /static
