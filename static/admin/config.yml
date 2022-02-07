@@ -63,21 +63,18 @@ collections:
   - name: objects
     label: Объекты
     folder: content/objects
-    format: frontmatter
+    format: json
     create: true
     slug: '{{fields.slug}}'
     editor:
       preview: false
     fields:
-      - { label: Заголовок страницы, name: metaTitle, widget: string }
       - { label: Название файла, name: slug, widget: string, hint: Переименовать файл нельзя }
       - { label: Картинка, name: img, widget: image, media_folder: /assets/img/objects }
       - { label: Заголовок объекта, name: title, widget: string }
-      - { label: Описание, name: description, widget: string }
-      - { label: Описание metatag, name: metaDescription, widget: string, required: false }
+      - { label: Сайт объекта, name: link, widget: string }
       - { label: Добавить на главную страницу, name: indexPage, widget: boolean, required: false }
-      - { label: Переместить в Новостройки, name: project, widget: boolean, required: false }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Переместить в Новостройки, name: project, widget: boolean, default: false, required: false }
 
   - name: projects
     label: Новостройки

@@ -1,17 +1,9 @@
 <template lang="pug">
   .small-card
-    NuxtLink.small-card__link(
-      v-if="!data.link"
-      :to="data.dir + '/' + data.slug")
-
-      ResponsibleImage.small-card__image(:img="data.img")
-      h3.small-card__title {{ data.title }}
-
     a.small-card__link(
-      v-else
-      :target="data.target"
+      target="_blank"
       @click="handleClick"
-      :href="data.link")
+      :href="data.link || '#'")
 
       ResponsibleImage.small-card__image(:img="data.img")
       h3.small-card__title {{ data.title }}
@@ -28,10 +20,9 @@ export default {
     }
   },
 
-  // TODO: Избавиться от этого метода
   methods: {
     handleClick (event) {
-      if (!this.data.target) { event.preventDefault() }
+      if (!this.data.link) { event.preventDefault() }
     }
   }
 }

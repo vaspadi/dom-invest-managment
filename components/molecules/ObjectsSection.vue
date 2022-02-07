@@ -41,7 +41,7 @@ export default {
     // indexPage влияет на отображение объектов на главной странице
     this.objects = await this.$content('objects', { deep: true })
       .where(this.indexPage ? { indexPage: true, project: false } : null)
-      .limit(this.limit)``
+      .limit(this.limit)
       .without('body')
       .sortBy('createdAt')
       .fetch()
