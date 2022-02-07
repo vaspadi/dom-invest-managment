@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: vaspadi/dom-invest-test-managment
+  repo: vaspadi/dom-invest-managment
 
 media_folder: assets/img/uploads
 public_folder: uploads
