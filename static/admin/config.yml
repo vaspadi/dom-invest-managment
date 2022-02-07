@@ -4,7 +4,7 @@ backend:
 
 media_folder: assets/img/uploads
 public_folder: uploads
-
+# test-text
 collections:
   - name: news
     label: Новости
