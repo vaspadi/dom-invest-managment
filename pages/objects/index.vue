@@ -50,7 +50,8 @@ export default {
   methods: {
     async showMoreObjects () {
       this.showButton = false
-      this.objects = await this.$content('news', { deep: true })
+      this.objects = await this.$content('objects', { deep: true })
+        .where({ project: false })
         .sortBy('createdAt', 'asc')
         .without(['body'])
         .fetch()
