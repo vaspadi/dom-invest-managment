@@ -5,7 +5,6 @@ img: /assets/img/news/img2.jpg
 title: Заголовок новости
 description: Описание страницы
 metaDescription: Описание метатэга
-time: 3 мин
 indexPage: true
 ---
 Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.

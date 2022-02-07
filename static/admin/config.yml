@@ -1,5 +1,6 @@
 backend:
-  name: github
+  name: proxy
+  proxy_url: http://172.22.0.1:3000/
   repo: vaspadi/dom-invest-managment
 
 media_folder: assets/img/uploads
@@ -15,15 +16,50 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: Заголовок страницы, name: metaTitle, widget: string }
-      - { label: Название файла, name: slug, widget: string, hint: Переименовать файл нельзя }
-      - { label: Картинка, name: img, widget: image, media_folder: /assets/img/news }
-      - { label: Заголовок новости, name: title, widget: string }
-      - { label: Описание, name: description, widget: string }
-      - { label: Описание metatag, name: metaDescription, widget: string, required: false }
-      - { label: Время прочтения, name: time, widget: string, required: false, hint: 3 мин }
-      - { label: Добавить на главную страницу, name: indexPage, widget: boolean, required: false }
-      - { label: Body, name: body, widget: markdown }
+      - label: Заголовок страницы
+        name: metaTitle
+        widget: string
+
+      - label: Название файла
+        name: slug
+        widget: string
+        hint: Переименовать файл нельзя
+
+      - label: Картинка
+        name: img
+        widget: image
+        media_folder: /assets/img/news
+      
+      - label: Заголовок новости
+        name: title
+        widget: string
+      
+      - label: Описание
+        name: description
+        widget: string
+      
+      - label: Описание metatag
+        name: metaDescription
+        widget: string
+        required: false
+      
+      - label: Тэги
+        name: tags
+        widget: list
+        field: {
+          - label: Текст тэга,
+            name: text,
+            widget: string
+        }
+      
+      - label: Добавить на главную страницу
+        name: indexPage
+        widget: boolean
+        required: false
+      
+      - label: Body
+        name: body
+        widget: markdown
 
   - name: objects
     label: Объекты
@@ -40,10 +76,24 @@ collections:
       - { label: Заголовок объекта, name: title, widget: string }
       - { label: Описание, name: description, widget: string }
       - { label: Описание metatag, name: metaDescription, widget: string, required: false }
-      - { label: Время прочтения, name: time, widget: string, required: false, hint: 3 мин }
       - { label: Добавить на главную страницу, name: indexPage, widget: boolean, required: false }
       - { label: Переместить в Новостройки, name: project, widget: boolean, required: false }
       - { label: Body, name: body, widget: markdown }
+
+  - name: projects
+    label: Новостройки
+    folder: content/objects
+    format: frontmatter
+    create: false
+    editor:
+      preview: false
+    filter:
+      field: project
+      value: true
+    fields:
+      - label: Переместить в Новостройки
+        name: project
+        widget: boolean
 
   - name: seo
     label: Seo
