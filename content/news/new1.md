@@ -8,7 +8,7 @@ metaDescription: Описание метатэга
 tags:
   - 3 минуты
   - срочные новости
-indexPage: false
+indexPage: true
 ---
 Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam. Dictum nunc ullamcorper. Blandit tellus quam sodales elit etiam.
 
