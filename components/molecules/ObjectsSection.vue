@@ -40,7 +40,7 @@ export default {
   async fetch () {
     // indexPage влияет на отображение объектов на главной странице
     this.objects = await this.$content('objects', { deep: true })
-      .where(this.indexPage ? { indexPage: true, project: false } : null)
+      .where(this.indexPage ? { indexPage: true, project: true } : null)
       .limit(this.limit)
       .without('body')
       .sortBy('createdAt')
