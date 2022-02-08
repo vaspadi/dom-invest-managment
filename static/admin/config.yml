@@ -137,8 +137,8 @@ collections:
             widget: string
 
       - label: 'Секция: {{fields.title}}'
-        name: newsSection
-        file: content/index-page/newsSection.json
+        name: mortgageSection
+        file: content/index-page/mortgageSection.json
         editor:
           preview: false
         fields:
