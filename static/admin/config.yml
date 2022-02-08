@@ -218,6 +218,35 @@ collections:
                 name: buttonText
                 widget: string
 
+  - name: contacts-page
+    label: 'Страница: Контакты'
+    files:
+      - label: Контакты
+        name: contacts
+        file: content/contacts-page/contacts.json
+        editor:
+          preview: false
+        fields:
+          - label: Контакты
+            name: contacts
+            widget: list
+            fields:
+              - label: Тип контакта
+                name: type
+                widget: select
+                options:
+                  - { label: Телефон, value: phone }
+                  - { label: Электронная почта, value: email }
+                  - { label: Адрес, value: address }
+              
+              - label: Контакт
+                name: title
+                widget: string
+
+              - label: href контакта
+                name: href
+                widget: string
+
   - name: seo
     label: Seo
     files:
