@@ -136,6 +136,27 @@ collections:
             name: buttonText
             widget: string
 
+      - label: Видео слайдер
+        name: videoSlider
+        file: content/index-page/videoSlider.json
+        editor:
+          preview: false
+        fields:
+          - label: Список Видео
+            name: videos
+            widget: list
+            fields:
+              - label: Заголовок
+                name: name
+                widget: string
+                required: false
+
+              - label: Идентификатор видео с youtube
+                name: id
+                widget: string
+                hint: youtube.com/watch?v= >>>> cQDeUcGxy48 <<<<
+
+
       - label: 'Секция импотечного калькулятора'
         name: mortgageSection
         file: content/index-page/mortgageSection.json
