@@ -5,7 +5,7 @@
         placeholder="Стоимость недвижемости"
         :value="mortgage"
         :min="3000000"
-        :max="500000000"
+        :max="40000000"
         icon="ruble-sign"
         @input="changeMortgage")
 

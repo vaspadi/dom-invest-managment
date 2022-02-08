@@ -1,21 +1,21 @@
 <template lang="pug">
   section.main-slider
     Hooper.main-slider__slider(:settings="settings" ref="slider")
-      Slide.main-slider__slide(v-for="(image, index) in mainSlider.images" :key="index")
+      Slide.main-slider__slide(v-for="(image, index) in images" :key="index")
         ResponsibleImage(:img="image")
       Pagination(slot="hooper-addons")
 
     SliderControls.container(@prev="slidePrev" @next="slideNext")
 
     .main-slider__content
-      h1.main-slider__title.title(v-html="mainSlider.title")
+      h1.main-slider__title.title(v-html="title")
 </template>
 
 <script>
 import { Hooper, Slide, Pagination } from 'hooper'
 import ResponsibleImage from '~/components/global/ResponsibleImage.vue'
 import SliderControls from '~/components/atoms/controls/SliderControls'
-import { mainSlider } from '~/content/data'
+import { title, images } from '~/content/index-page/mainSlider'
 
 export default {
   name: 'MainSlider',
@@ -30,7 +30,8 @@ export default {
 
   data () {
     return {
-      mainSlider,
+      title,
+      images,
 
       settings: {
         wheelControl: false,
