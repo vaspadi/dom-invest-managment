@@ -2,7 +2,7 @@
   section.objects-section.section
     .container
       CardList.objects-section__list(:data="objects" small)
-      SectionHeader(:data="objectsSection")
+      SectionHeader(:data="objectsSection" button-url="/projects")
 </template>
 
 <script>

@@ -100,6 +100,24 @@ collections:
                 media_folder: /assets/img/main-slider
             }
 
+      - label: Секция объектов
+        name: objectsSection
+        file: content/index-page/objectsSection.json
+        editor:
+          preview: false
+        fields:
+          - label: Заголовок секции
+            name: title
+            widget: string
+
+          - label: Описание секции
+            name: description
+            widget: string
+
+          - label: Текст кнопки
+            name: buttonText
+            widget: string
+
   - name: projects
     label: Новостройки
     folder: content/objects

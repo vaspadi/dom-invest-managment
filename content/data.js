@@ -41,29 +41,20 @@ export const performanceSection = {
   header: {
     title: 'Квартира специально для вас',
     description: 'У нас вы сможете подобрать доступное жилье комфорт-класса',
-    button: {
-      url: '/performance',
-      text: 'Подобрать квартиру'
-    }
+    buttonText: 'Подобрать квартиру'
   }
 }
 
 export const newsSection = {
   title: 'Последние новости',
   description: 'Следите за жизнью нашей компании в нашем блоге',
-  button: {
-    text: 'Все новости',
-    url: 'news'
-  }
+  buttonText: 'Все новости'
 }
 
 export const objectsSection = {
   title: 'Жилье европейского типа',
   description: 'Строим и реализуем жилые комплексы на территории Калининградской области',
-  button: {
-    text: 'Актуальные объекты',
-    url: 'projects'
-  }
+  buttonText: 'Актуальные объекты'
 }
 
 export const videoSlider = [
@@ -85,10 +76,7 @@ export const mortgageSection = {
   header: {
     title: 'Ипотечный калькулятор',
     description: 'Узнайте примерный платёж, ставку и другие условия по ипотеке',
-    button: {
-      url: '/mortgage',
-      text: 'Расчитать'
-    }
+    buttonText: 'Расчитать'
   }
 }
 

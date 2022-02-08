@@ -7,7 +7,7 @@
         .information-section__image.image-block
           ResponsibleImage.image-block__image(:img="data.img")
 
-      SectionHeader(v-if="data.header" :data="data.header" light)
+      SectionHeader(v-if="data.header" :data="data.header" :button-url="buttonUrl" light)
 </template>
 
 <script>
@@ -28,6 +28,11 @@ export default {
     data: {
       type: Object,
       required: true
+    },
+
+    buttonUrl: {
+      type: String,
+      default: ''
     },
 
     reverse: {

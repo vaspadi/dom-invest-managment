@@ -5,7 +5,10 @@
       p.section-header__description {{ data.description }}
 
     .section-header__right
-      NuxtLink.section-header__link.button(:to="data.button.url" :class="{ 'button_light': light }") {{ data.button.text }}
+      NuxtLink.section-header__link.button(
+        :class="{ 'button_light': light }"
+        :to="buttonUrl"
+        ) {{ data.buttonText }}
 </template>
 
 <script>
@@ -16,6 +19,11 @@ export default {
     data: {
       type: Object,
       required: true
+    },
+
+    buttonUrl: {
+      type: String,
+      default: ''
     },
 
     light: {

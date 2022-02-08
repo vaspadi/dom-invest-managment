@@ -7,7 +7,7 @@
     section.section
       .container
         SliderBlock(:data="videoSlider")
-    InformationSection(:data="mortgageSection" reverse)
+    InformationSection(:data="mortgageSection" button-url="/mortgage" reverse)
 </template>
 
 <script>
