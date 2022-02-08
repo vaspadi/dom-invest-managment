@@ -72,8 +72,8 @@ collections:
       - { label: Название файла, name: slug, widget: string, hint: Переименовать файл нельзя }
       - { label: Картинка, name: img, widget: image, media_folder: /assets/img/objects }
       - { label: Заголовок объекта, name: title, widget: string }
-      - { label: Сайт объекта, name: link, widget: string }
-      - { label: Добавить на главную страницу, name: indexPage, widget: boolean, required: false }
+      - { label: Сайт объекта, name: link, widget: string, required: false }
+      - { label: Добавить на главную страницу, name: indexPage, widget: boolean, hint: Игнорируется для Новостроек, required: false }
       - { label: Переместить в Новостройки, name: project, widget: boolean, default: false, required: false }
 
   - name: projects
