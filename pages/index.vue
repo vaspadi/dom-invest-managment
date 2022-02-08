@@ -5,7 +5,7 @@
     NewsSection.index-page__news(index-page)
     section.section
       .container
-        SliderBlock(:data="videoSlider")
+        SliderBlock(:data="videoSlider.videos")
     InformationSection(:data="mortgageSection" button-url="/mortgage" reverse)
 </template>
 
@@ -16,7 +16,7 @@ import NewsSection from '~/components/molecules/NewsSection.vue'
 import ObjectsSection from '~/components/molecules/ObjectsSection'
 import SliderBlock from '~/components/molecules/SliderBlock'
 import mortgageSection from '~/content/index-page/mortgageSection'
-import { videoSlider } from '~/content/data'
+import videoSlider from '~/content/index-page/videoSlider'
 import { home } from '~/content/meta'
 
 export default {

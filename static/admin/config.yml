@@ -147,7 +147,7 @@ collections:
             widget: list
             fields:
               - label: Заголовок
-                name: name
+                name: title
                 widget: string
                 required: false
 
