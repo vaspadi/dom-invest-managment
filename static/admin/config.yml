@@ -89,9 +89,9 @@ collections:
             name: title
             widget: string
 
-          - label: Картинка,
-            name: images,
-            widget: image,
+          - label: Картинка
+            name: images
+            widget: image
             media_library: /assets/img/main-slider
 
   - name: projects
