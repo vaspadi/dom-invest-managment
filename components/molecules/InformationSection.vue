@@ -2,7 +2,7 @@
   section.information-section.section(:class="{ 'information-section_reverse': reverse }")
     .container
       .information-section__content
-        TextBlock.information-section__text-block(:data="data.text" dark)
+        TextBlock.information-section__text-block(:data="data.textBlock" dark)
 
         .information-section__image.image-block
           ResponsibleImage.image-block__image(:img="data.img")

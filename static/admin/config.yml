@@ -4,7 +4,7 @@ backend:
 
 media_folder: assets/img/uploads
 public_folder: uploads
-# test-text
+
 collections:
   - name: news
     label: Новости
@@ -169,7 +169,7 @@ collections:
             media_folder: /assets/img
 
           - label: Текстовый блок
-            name: text
+            name: textBlock
             widget: object
             fields:
               - label: Загловок блока
