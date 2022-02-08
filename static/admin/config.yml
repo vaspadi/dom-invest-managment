@@ -254,10 +254,12 @@ collections:
             fields:
               - label: X координата на карте
                 name: x
+                value_type: float
                 widget: number
 
               - label: Y координата на карте
                 name: 'y'
+                value_type: float
                 widget: number
 
   - name: seo
