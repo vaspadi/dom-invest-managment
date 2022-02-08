@@ -76,6 +76,30 @@ collections:
       - { label: Добавить на главную страницу, name: indexPage, widget: boolean, hint: Игнорируется для Новостроек, required: false }
       - { label: Переместить в Новостройки, name: project, widget: boolean, default: false, required: false }
 
+  - name: index-page
+    label: 'Страница: Главная'
+    files:
+      - label: Главный слайдер
+        name: mainSlider
+        file: content/index-page/mainSlider.json
+        editor:
+          preview: false
+        fields:
+          - label: Заголовок секции
+            name: title
+            widget: string
+
+          - label: Картинки
+            name: images
+            widget: list
+            summary: '{{fields.text}}'
+            field: {
+              - label: Картинка,
+                name: img,
+                widget: image,
+                media_folder: /assets/img/main-slider
+            }
+
   - name: projects
     label: Новостройки
     folder: content/objects
