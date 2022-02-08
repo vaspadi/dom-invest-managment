@@ -8,7 +8,7 @@
 <script>
 import CardList from '~/components/molecules/CardList'
 import SectionHeader from '~/components/atoms/SectionHeader'
-import { objectsSection } from '~/content/data'
+import objectsSection from '~/content/index-page/objectsSection'
 
 export default {
   name: 'ObjectsSection',
