@@ -1,0 +1,22 @@
+{
+  "coords": {
+    "y": 20.485505,
+    "x": 54.743047
+  },
+  "contacts": [
+    {
+      "type": "phone",
+      "title": "+7 4012 50 98 51",
+      "href": "+74012509851"
+    },
+    {
+      "type": "email",
+      "title": "info@dominvest39.ru",
+      "href": "info@dominvest39.ru"
+    },
+    {
+      "type": "address",
+      "title": "ул. Генерала Челнокова, ул, 42, Калининград, Калининградская обл., 236029"
+    }
+  ]
+}
