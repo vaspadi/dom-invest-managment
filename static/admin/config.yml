@@ -136,7 +136,7 @@ collections:
             name: buttonText
             widget: string
 
-      - label: 'Секция: {{fields.title}}'
+      - label: 'Секция импотечного калькулятора'
         name: mortgageSection
         file: content/index-page/mortgageSection.json
         editor:
@@ -169,7 +169,7 @@ collections:
           - label: Описание секции
             name: header
             widget: object
-            fileds:
+            fields:
               - label: Заголовок
                 name: title
                 widget: string
