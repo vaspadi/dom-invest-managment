@@ -118,6 +118,70 @@ collections:
             name: buttonText
             widget: string
 
+      - label: Секция новостей
+        name: newsSection
+        file: content/index-page/newsSection.json
+        editor:
+          preview: false
+        fields:
+          - label: Заголовок секции
+            name: title
+            widget: string
+
+          - label: Описание секции
+            name: description
+            widget: string
+
+          - label: Текст кнопки
+            name: buttonText
+            widget: string
+
+      - label: 'Секция: {{fields.title}}'
+        name: newsSection
+        file: content/index-page/newsSection.json
+        editor:
+          preview: false
+        fields:
+          - label: Картинка
+            name: img
+            widget: image
+            media_folder: /assets/img
+
+          - label: Текстовый блок
+            name: text
+            widget: object
+            fields:
+              - label: Загловок блока
+                name: title
+                widget: string
+                required: false
+
+              - label: Параграфы
+                name: list
+                widget: list
+                summary: '{{fields.text}}'
+                field: {
+                  - label: Параграф,
+                    name: text,
+                    widget: string
+                }
+          
+          - label: Описание секции
+            name: header
+            widget: object
+            fileds:
+              - label: Заголовок
+                name: title
+                widget: string
+
+              - label: Описание
+                name: description
+                widget: string
+
+              - label: Текст кнопки
+                name: buttonText
+                widget: string
+
   - name: projects
     label: Новостройки
     folder: content/objects
