@@ -246,6 +246,19 @@ collections:
               - label: href контакта
                 name: href
                 widget: string
+                required: false
+
+          - label: Координаты
+            name: coords
+            widget: object
+            fields:
+              - label: X координата на карте
+                name: x
+                widget: number
+
+              - label: Y координата на карте
+                name: 'y'
+                widget: number
 
   - name: seo
     label: Seo
