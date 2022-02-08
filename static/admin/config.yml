@@ -92,7 +92,8 @@ collections:
           - label: Картинка
             name: images
             widget: image
-            media_library: /assets/img/main-slider
+            allow_multiple: true
+            media_folder: /assets/img/main-slider
 
   - name: projects
     label: Новостройки
