@@ -89,16 +89,10 @@ collections:
             name: title
             widget: string
 
-          - label: Картинки
-            name: images
-            widget: list
-            summary: '{{fields.text}}'
-            field: {
-              - label: Картинка,
-                name: img,
-                widget: image,
-                media_folder: /assets/img/main-slider
-            }
+          - label: Картинка,
+            name: images,
+            widget: images,
+            media_folder: /assets/img/main-slider
 
   - name: projects
     label: Новостройки
