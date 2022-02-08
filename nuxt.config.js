@@ -4,6 +4,8 @@ export default {
     apiUrl: process.env.VUE_APP_BASE_API || 'http://localhost:5000/api'
   },
 
+  target: 'static',
+
   head: {
     title: 'main',
     htmlAttrs: {
