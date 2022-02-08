@@ -89,11 +89,16 @@ collections:
             name: title
             widget: string
 
-          - label: Картинка
+          - label: Картинки
             name: images
-            widget: image
-            allow_multiple: true
-            media_folder: /assets/img/main-slider
+            widget: list
+            summary: '{{fields.img}}'
+            field: {
+              - label: Картинка,
+                name: img,
+                widget: image,
+                media_folder: /assets/img/main-slider
+            }
 
   - name: projects
     label: Новостройки
