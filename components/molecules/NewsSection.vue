@@ -9,7 +9,7 @@
 <script>
 import CardList from '~/components/molecules/CardList'
 import SectionHeader from '~/components/atoms/SectionHeader'
-import { newsSection } from '~/content/data'
+import newsSection from '~/content/index-page/newsSection'
 
 export default {
   name: 'NewsSection',
